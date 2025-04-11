@@ -1,0 +1,18 @@
+-- page components
+1. nav
+2. footer
+3. cta
+4. about us
+5. services
+6. reviews (google)
+7. our team
+8. contact us + google map
+
+-- functionale
+8. popup
+9. banner
+10. admin crud integration
+11. local database
+12. call scheduler (to send messages directly to admin)
+13. internationalization
+14. theme provider
