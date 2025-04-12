@@ -7,6 +7,7 @@
 6. reviews (google)
 7. our team
 8. contact us + google map
+9. Blog (more likely a library of knowledge)
 
 -- functionale
 8. popup

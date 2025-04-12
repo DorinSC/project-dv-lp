@@ -1,6 +1,7 @@
 import { Link, Route, Routes } from "react-router-dom";
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
+import LanguageSwitch from "@/components/languageSwitch";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <Link to="/">Home</Link>
         <Link to="/servicii">Services</Link>
       </nav>
+      <LanguageSwitch />
 
       <Routes>
         <Route path="/" element={<Home />} />
