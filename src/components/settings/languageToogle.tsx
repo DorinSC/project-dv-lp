@@ -16,7 +16,7 @@ const languages = [
   { label: "Украинский", value: "ua" },
 ];
 
-const LanguageSwitch: React.FC = () => {
+const LanguageToggle: React.FC = () => {
   const { i18n } = useTranslation();
 
   const getLanguageLabel = (lng: string): string => {
@@ -42,7 +42,7 @@ const LanguageSwitch: React.FC = () => {
       <DropdownMenuTrigger>
         <Button variant="ghost">{selectedLang}</Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent className="border-border/50 bg-background/50 backdrop-blur-xs">
         {languages.map((item) => (
           <DropdownMenuItem
             key={item.value}
@@ -56,4 +56,4 @@ const LanguageSwitch: React.FC = () => {
   );
 };
 
-export default LanguageSwitch;
+export default LanguageToggle;

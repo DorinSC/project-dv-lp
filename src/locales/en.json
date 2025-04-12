@@ -1,3 +1,9 @@
 {
+  "navbar": {
+    "promotions": "Promotions",
+    "services": "Services",
+    "blog": "Blog",
+    "contactus": "Contacts"
+  },
   "welcome": "Welcome to the app!"
 }

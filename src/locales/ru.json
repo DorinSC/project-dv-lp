@@ -1,3 +1,9 @@
 {
+  "navbar": {
+    "promotions": "Акции",
+    "services": "Услуги",
+    "blog": "Blog",
+    "contactus": "Контакты"
+  },
   "welcome": "Добро пожаловать в приложение!"
 }

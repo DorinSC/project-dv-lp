@@ -1,3 +1,9 @@
 {
+  "navbar": {
+    "promotions": "Promozioni",
+    "services": "Servizi",
+    "blog": "Blog",
+    "contactus": "Contatti"
+  },
   "welcome": "Benvenuto nell'app"
 }

@@ -1,3 +1,9 @@
 {
+  "navbar": {
+    "promotions": "Promoții",
+    "services": "Servicii",
+    "blog": "Blog",
+    "contactus": "Contacte"
+  },
   "welcome": "Bine ai venit in aplicatie"
 }

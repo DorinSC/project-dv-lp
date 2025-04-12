@@ -15,5 +15,5 @@
 10. admin crud integration
 11. local database
 12. call scheduler (to send messages directly to admin)
-13. internationalization
-14. theme provider
+13. internationalization ✅
+14. theme provider ✅

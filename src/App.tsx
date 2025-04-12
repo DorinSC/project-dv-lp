@@ -1,22 +1,27 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "@/provider/themeProvider";
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
-import LanguageSwitch from "@/components/languageSwitch";
+import NavBar from "@/components/navigation/navBar";
+import Promotions from "@/pages/Promotions";
+import Blog from "./pages/Blog";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
-    <div>
-      <nav className="p-4 space-x-4">
-        <Link to="/">Home</Link>
-        <Link to="/servicii">Services</Link>
-      </nav>
-      <LanguageSwitch />
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <NavBar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/servicii" element={<Services />} />
-      </Routes>
-    </div>
+      <div className="mt-20 mx-4">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/promotions" element={<Promotions />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+        </Routes>
+      </div>
+    </ThemeProvider>
   );
 }
 
