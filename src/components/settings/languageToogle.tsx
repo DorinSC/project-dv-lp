@@ -7,16 +7,23 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
+import enFlag from "@/assets/flags/uk.png";
+import itFlag from "@/assets/flags/it.png";
+import roFlag from "@/assets/flags/ro.png";
+import ruFlag from "@/assets/flags/ru.png";
+import uaFlag from "@/assets/flags/ua.png";
+import { useIsMobile } from "@/hooks/isMobile";
 
 const languages = [
-  { label: "English", value: "en" },
-  { label: "Italiano", value: "it" },
-  { label: "Română", value: "ro" },
-  { label: "Русский", value: "ru" },
-  { label: "Украинский", value: "ua" },
+  { label: "English", value: "en", icon: enFlag },
+  { label: "Italiano", value: "it", icon: itFlag },
+  { label: "Română", value: "ro", icon: roFlag },
+  { label: "Русский", value: "ru", icon: ruFlag },
+  { label: "Украинский", value: "ua", icon: uaFlag },
 ];
 
 const LanguageToggle: React.FC = () => {
+  const isMobile = useIsMobile();
   const { i18n } = useTranslation();
 
   const getLanguageLabel = (lng: string): string => {
@@ -40,7 +47,30 @@ const LanguageToggle: React.FC = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Button variant="ghost">{selectedLang}</Button>
+        {isMobile ? (
+          <Button variant="ghost" size="icon">
+            <img
+              src={
+                languages.find((l) => l.label === selectedLang)?.icon ??
+                "/assets/flags/ro.png"
+              }
+              alt={selectedLang}
+              className="w-5 h-5 rounded-lg object-cover"
+            />
+          </Button>
+        ) : (
+          <Button variant="ghost">
+            <img
+              src={
+                languages.find((l) => l.label === selectedLang)?.icon ??
+                "/assets/flags/ro.png"
+              }
+              alt={selectedLang}
+              className="w-5 h-5 rounded-lg object-cover"
+            />
+            {!isMobile && selectedLang}
+          </Button>
+        )}
       </DropdownMenuTrigger>
       <DropdownMenuContent className="border-border/50 bg-background/50 backdrop-blur-xs">
         {languages.map((item) => (
@@ -48,6 +78,11 @@ const LanguageToggle: React.FC = () => {
             key={item.value}
             onClick={() => handleChangeLanguage(item.value, item.label)}
           >
+            <img
+              src={item.icon}
+              alt={item.label}
+              className="w-5 h-5 rounded-lg object-cover"
+            />
             {item.label}
           </DropdownMenuItem>
         ))}

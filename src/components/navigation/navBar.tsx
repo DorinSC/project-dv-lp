@@ -4,8 +4,14 @@ import LanguageToggle from "@/components/settings/languageToogle";
 import ThemeToggle from "@/components/settings/themeToggle";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/isMobile";
-import { Menu } from "lucide-react";
-import { Drawer, DrawerBody, DrawerContent, DrawerTrigger } from "../ui/drawer";
+import { Menu, Phone } from "lucide-react";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerFooter,
+  DrawerTrigger,
+} from "../ui/drawer";
 import { useTranslation } from "react-i18next";
 
 const navItems = [
@@ -55,13 +61,23 @@ const NavBar = () => {
                       key={item.label}
                       variant="ghost"
                       size="lg"
-                      className="justify-start text-lg"
+                      className="justify-start text-lg font-semibold"
                     >
-                      <Link to={item.href}>{t(`navbar.${item.label}`)}</Link>
+                      <Link to={item.href}>{t(`navitems.${item.label}`)}</Link>
                     </Button>
                   ))}
                 </div>
               </DrawerBody>
+              <DrawerFooter>
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="text-lg font-semibold text-green-500 border border-green-200 bg-green-100/50 hover:bg-green-100/90 dark:border-green-700 dark:bg-green-800/50 dark:hover:bg-green-800/90"
+                >
+                  <Phone />
+                  {t("navitems.appointment")}
+                </Button>
+              </DrawerFooter>
             </DrawerContent>
           </Drawer>
         </div>
@@ -69,8 +85,8 @@ const NavBar = () => {
         <>
           <div className="flex flex-row gap-4">
             {navItems.map((item) => (
-              <Button variant="ghost" key={item.label}>
-                <Link to={item.href}>{t(`navbar.${item.label}`)}</Link>
+              <Button variant="ghost" key={item.label} className="text-md ">
+                <Link to={item.href}>{t(`navitems.${item.label}`)}</Link>
               </Button>
             ))}
           </div>

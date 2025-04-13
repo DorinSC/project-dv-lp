@@ -1,9 +1,13 @@
 {
-  "navbar": {
+  "navitems": {
     "promotions": "Promotions",
     "services": "Services",
     "blog": "Blog",
-    "contactus": "Contacts"
+    "contactus": "Contacts",
+    "appointment": "Schedule an appointment now"
+  },
+  "footer": {
+    "firstcolumntitle": "How to find us?"
   },
   "welcome": "Welcome to the app!"
 }

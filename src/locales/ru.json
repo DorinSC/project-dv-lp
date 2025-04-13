@@ -1,9 +1,13 @@
 {
-  "navbar": {
+  "navitems": {
     "promotions": "Акции",
     "services": "Услуги",
     "blog": "Blog",
-    "contactus": "Контакты"
+    "contactus": "Контакты",
+    "appointment": "Запишитесь на консультацию сейчас"
+  },
+  "footer": {
+    "firstcolumntitle": "Как нас найти?"
   },
   "welcome": "Добро пожаловать в приложение!"
 }

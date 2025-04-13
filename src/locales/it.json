@@ -1,9 +1,13 @@
 {
-  "navbar": {
+  "navitems": {
     "promotions": "Promozioni",
     "services": "Servizi",
     "blog": "Blog",
-    "contactus": "Contatti"
+    "contactus": "Contatti",
+    "appointment": "Prenota subito una consulenza"
+  },
+  "footer": {
+    "firstcolumntitle": "Come trovarci?"
   },
   "welcome": "Benvenuto nell'app"
 }

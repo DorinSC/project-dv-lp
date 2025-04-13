@@ -1,9 +1,13 @@
 {
-  "navbar": {
+  "navitems": {
     "promotions": "Promoții",
     "services": "Servicii",
     "blog": "Blog",
-    "contactus": "Contacte"
+    "contactus": "Contacte",
+    "appointment": "Rezervă acum o consultație"
+  },
+  "footer": {
+    "firstcolumntitle": "Cum ne gasiti?"
   },
   "welcome": "Bine ai venit in aplicatie"
 }

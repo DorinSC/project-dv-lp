@@ -4,8 +4,9 @@ import Home from "@/pages/Home";
 import Services from "@/pages/Services";
 import NavBar from "@/components/navigation/navBar";
 import Promotions from "@/pages/Promotions";
-import Blog from "./pages/Blog";
-import ContactUs from "./pages/ContactUs";
+import Blog from "@/pages/Blog";
+import ContactUs from "@/pages/ContactUs";
+import NavFooter from "@/components/navigation/navFooter";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} />
         </Routes>
       </div>
+      <NavFooter />
     </ThemeProvider>
   );
 }

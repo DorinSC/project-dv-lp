@@ -1,9 +1,13 @@
 {
-  "navbar": {
+  "navitems": {
     "promotions": "Акції",
     "services": "Послуги",
     "blog": "Blog",
-    "contactus": "Контакти"
+    "contactus": "Контакти",
+    "appointment": "Запишіться на консультацію зараз"
+  },
+  "footer": {
+    "firstcolumntitle": "Як нас знайти?"
   },
   "welcome": "Ласкаво просимо до програми!"
 }
