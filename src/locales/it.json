@@ -1,4 +1,9 @@
 {
+  "workingHours": {
+    "open": "aperto",
+    "closing": "chiudendo presto",
+    "closed": "chiuso"
+  },
   "navitems": {
     "promotions": "Promozioni",
     "services": "Servizi",
@@ -9,5 +14,19 @@
   "footer": {
     "firstcolumntitle": "Come trovarci?"
   },
-  "welcome": "Benvenuto nell'app"
+  "hero": {
+    "address": "Clinica dentale a Bali",
+    "title": "La nostra priorità è",
+    "titlebold": "il tuo sorriso",
+    "description": "Da oltre 10 anni il tuo sorriso è la nostra priorità, sei sempre il benvenuto presso la clinica dentistica Dental Vlad"
+  },
+  "cta": {
+    "message": "Chiama ora e fissa un appuntamento per",
+    "consultation": "Consulenza",
+    "scaling": "Detartrasi",
+    "implant": "Impianto",
+    "cleaning": "Pulizia",
+    "cariesremoval": "Rimozione della carie",
+    "reconstruction": "Ricostruzione"
+  }
 }

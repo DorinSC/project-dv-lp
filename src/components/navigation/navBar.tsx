@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router";
 import LanguageToggle from "@/components/settings/languageToogle";
 import ThemeToggle from "@/components/settings/themeToggle";
@@ -38,7 +37,7 @@ const NavBar = () => {
   const { t } = useTranslation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex flex-row m-4 py-2 px-4 rounded-xl border border-px border-border/50 justify-between bg-background/50 backdrop-blur-xs">
+    <header className="fixed top-0 left-0 right-0 z-50 flex flex-row py-2 px-4 border border-b-[1px] border-border/50 justify-between bg-background/50 backdrop-blur-md">
       <div className="flex items-center">
         <Link to="/">logo</Link>
       </div>
@@ -72,7 +71,7 @@ const NavBar = () => {
                 <Button
                   variant="default"
                   size="lg"
-                  className="text-lg font-semibold text-green-500 border border-green-200 bg-green-100/50 hover:bg-green-100/90 dark:border-green-700 dark:bg-green-800/50 dark:hover:bg-green-800/90"
+                  className="text-lg font-semibold text-green-600 border border-green-200 bg-green-100/50 hover:bg-green-100/90 dark:border-green-700 dark:bg-green-800/50 dark:hover:bg-green-800/90"
                 >
                   <Phone />
                   {t("navitems.appointment")}

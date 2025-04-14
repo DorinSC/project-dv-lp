@@ -1,50 +1,61 @@
 import GMap from "@/components/maps/gMap";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Mail, Phone } from "lucide-react";
-import React from "react";
-import { useTranslation } from "react-i18next";
+import { Mail, MapPin, Phone } from "lucide-react";
+
+import CTA from "@/pages/sections/CTA";
+import Hero from "@/pages/sections/Hero";
 
 const Home = () => {
-  const { t } = useTranslation();
   return (
-    <div>
-      {t("welcome")}
+    <div className="overflow-x-hidden">
+      {/* Hero */}
+      <Hero />
 
-      {/* contact us */}
-      <Card>
-        <CardContent>
-          <div className="flex flex-row gap-4 h-[400px]">
-            <div className="flex-1 flex flex-col gap-4">
-              <div className="flex-1">
-                <h1>Ne gasiti aici</h1>
-                <p> Strada Decebal 31, or. Bălți, Modova</p>
-              </div>
-              <Separator />
-              <div className="flex-1">
-                <h1>Sunati in orice moment</h1>
-                <p className="flex items-center gap-4">
-                  <Phone className="size-4" /> +357 071234567
-                </p>
-                <p className="flex items-center gap-4">
-                  <Phone className="size-4" /> +357 071234567
-                </p>
-                <p className="flex items-center gap-4">
-                  <Mail className="size-4" /> dentalVlad@office.com
-                </p>
-              </div>
-              <Separator />
-              <div className="flex-1">
-                <h1>Graficul de lucru</h1>
-              </div>
+      {/* call now cta */}
+      <CTA />
+
+      {/* Contact us */}
+      <div className="h-[500px] flex flex-row mx-20 my-8 gap-8">
+        <Card className="flex-1 bg-background/50 backdrop-blur-md">
+          <CardContent className="flex flex-col h-full gap-8">
+            <div className="flex-1 flex flex-col gap-2">
+              <h1 className="text-lg font-semibold">
+                Ne gasiti mereu <span className="text-2xl font-bold">aici</span>
+              </h1>
+              <p className="flex items-center gap-4">
+                <MapPin className="size-4" />
+                Strada Decebal 31, or. Bălți, Modova
+              </p>
             </div>
-            <Separator orientation="vertical" />
-            <div className="relative flex-2 w-[600px] h-full rounded-xl overflow-hidden ">
-              <GMap />
+            <Separator />
+            <div className="flex-1 flex flex-col gap-2">
+              <h1 className="text-lg font-semibold">
+                Sunati in{" "}
+                <span className="text-2xl font-bold">orice moment</span>
+              </h1>
+              <p className="flex items-center gap-4">
+                <Phone className="size-4" /> +357 071234567
+              </p>
+              <p className="flex items-center gap-4">
+                <Phone className="size-4" /> +357 071234567
+              </p>
+              <p className="flex items-center gap-4">
+                <Mail className="size-4" /> dentalVlad@office.com
+              </p>
             </div>
-          </div>
-        </CardContent>
-      </Card>
+            <Separator />
+            <div className="flex-1 flex flex-col gap-2">
+              <h1 className="text-lg font-semibold">Graficul de lucru</h1>
+              <p>Luni - Vineri : 00:00 - 00:00</p>
+              <p>Sambata - Duminica : Zi libera</p>
+            </div>
+          </CardContent>
+        </Card>
+        <div className="flex-2 rounded-xl overflow-hidden border border-border/50 shadow-sm">
+          <GMap />
+        </div>
+      </div>
     </div>
   );
 };

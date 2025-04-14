@@ -1,4 +1,9 @@
 {
+  "workingHours": {
+    "open": "deschis",
+    "closing": "se inchide curând",
+    "closed": "închis"
+  },
   "navitems": {
     "promotions": "Promoții",
     "services": "Servicii",
@@ -9,5 +14,19 @@
   "footer": {
     "firstcolumntitle": "Cum ne gasiti?"
   },
-  "welcome": "Bine ai venit in aplicatie"
+  "hero": {
+    "address": "Clinica stomatologica din orașul Balți",
+    "title": "Prioritatea noastră este",
+    "titlebold": "zâmbetul tău",
+    "description": "De mai bine de 10 ani, zâmbetul tău este prioritatea noastră, ești mereu binevenit la clinica stomatologică Dental Vlad"
+  },
+  "cta": {
+    "message": "Apelați acum și programați o întâlnire pentru",
+    "consultation": "Consultare",
+    "scaling": "Scalare",
+    "implant": "Implant",
+    "cleaning": "Curățenie",
+    "cariesremoval": "Indepartarea cariilor",
+    "reconstruction": "Reconstrucţie"
+  }
 }

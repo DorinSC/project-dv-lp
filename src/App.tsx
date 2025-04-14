@@ -6,14 +6,12 @@ import NavBar from "@/components/navigation/navBar";
 import Promotions from "@/pages/Promotions";
 import Blog from "@/pages/Blog";
 import ContactUs from "@/pages/ContactUs";
-import NavFooter from "@/components/navigation/navFooter";
 
 function App() {
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <NavBar />
-
-      <div className="mt-20 mx-4">
+      <div className="pt-20 ">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/promotions" element={<Promotions />} />
@@ -22,7 +20,6 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} />
         </Routes>
       </div>
-      <NavFooter />
     </ThemeProvider>
   );
 }

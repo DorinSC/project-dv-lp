@@ -1,5 +1,4 @@
 import { Facebook, Instagram, Phone } from "lucide-react";
-import React from "react";
 import { useTranslation } from "react-i18next";
 import GMap from "@/components/maps/gMap";
 import { Separator } from "@/components/ui/separator";

@@ -1,4 +1,9 @@
 {
+  "workingHours": {
+    "open": "open",
+    "closing": "closing soon",
+    "closed": "closed"
+  },
   "navitems": {
     "promotions": "Promotions",
     "services": "Services",
@@ -9,5 +14,19 @@
   "footer": {
     "firstcolumntitle": "How to find us?"
   },
-  "welcome": "Welcome to the app!"
+  "hero": {
+    "address": "Dental Clinic in Balti",
+    "title": "Our priority is",
+    "titlebold": "your smile",
+    "description": "For more than 10 years, your smile has been our priority, you are always welcome at the Dental Vlad dental clinic"
+  },
+  "cta": {
+    "message": "Call now and schedule an appointment for",
+    "consultation": "Consultation",
+    "scaling": "Scaling",
+    "implant": "Implant",
+    "cleaning": "Cleaning",
+    "cariesremoval": "Caries removal",
+    "reconstruction": "Reconstruction"
+  }
 }
