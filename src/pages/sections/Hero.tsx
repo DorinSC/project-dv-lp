@@ -12,31 +12,41 @@ const Hero = () => {
 
   if (isMobile) {
     return (
-      <div className="relative flex flex-row h-[400px] mx-5 bg-background overflow-hidden">
-        <div className="flex-1 flex flex-col justify-between items-start gap-4  z-10">
-          <div className="flex flex-row gap-2 text-sm">
-            <p className="flex flex-row items-center gap-2 text-muted-foreground">
-              <MapPin className="size-4" />
-              {t(`hero.address`)}
-            </p>
-            <Separator orientation="vertical" />
-            <WorkHourIndicator />
-          </div>
+      <>
+        <div className="flex flex-col h-[350px] mx-5 bg-background overflow-hidden">
+          <div className="flex-1 flex flex-col justify-between items-start gap-4  z-10">
+            <div className="flex flex-row gap-2 text-sm">
+              <p className="flex flex-row items-center gap-2 text-muted-foreground">
+                <MapPin className="size-4" />
+                {t(`hero.address`)}
+              </p>
+              <Separator orientation="vertical" />
+              <WorkHourIndicator />
+            </div>
 
-          <div className="flex-1 flex flex-col justify-center items-start gap-2">
-            <p className="font-light text-3xl antialiased ">
-              {t(`hero.title`)}
-            </p>
+            <div className="flex-1 flex flex-col justify-center items-center gap-2">
+              <p className="font-light text-3xl antialiased ">
+                {t(`hero.title`)}
+              </p>
 
-            <p className="font-bold tracking-wide text-4xl text-blue-600 uppercase antialiased ">
-              {t(`hero.titlebold`)}
-            </p>
-            <Separator />
-            <p className="font-light text-md text-muted-foreground">
-              {t(`hero.description`)}
-            </p>
+              <p className="font-bold tracking-wide text-4xl text-blue-600 uppercase antialiased ">
+                {t(`hero.titlebold`)}
+              </p>
+              <Separator />
+              <p className="font-light text-sm text-muted-foreground">
+                {t(`hero.description`)}
+              </p>
+            </div>
           </div>
-          <div className="flex flex-row gap-2">
+        </div>
+        <div className="relative mt-32">
+          <img
+            src={SmilingImg}
+            alt="smiling woman"
+            className="absolute object-cover bottom-0 h-[300px] left-1/2 -translate-x-1/2"
+          />
+
+          <div className="flex flex-row gap-2 z-10 w-full h-20 justify-center backdrop-blur-2xl ">
             <div className="flex flex-col justify-center items-start text-md font-thin text-muted-foreground">
               <p>Peste</p>
               <div className="flex flex-row gap-1">
@@ -78,19 +88,13 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        {/* 
-        <img
-          src={SmilingImg}
-          alt="smiling woman"
-          className="absolute object-cover h-[600px] bottom-0 left-0 blur-md"
-        /> */}
-      </div>
+      </>
     );
   } else {
     return (
-      <Card className=" mx-20 p-10 h-[500px] bg-background overflow-hidden">
-        <CardContent className="flex flex-row h-full">
-          <div className="flex-1 flex flex-col justify-between items-start gap-4 left-10">
+      <Card className="mx-20 p-10 h-[500px] backdrop-blur-2xl overflow-hidden relative">
+        <CardContent className="flex flex-row h-full ">
+          <div className="flex-1 flex flex-col justify-between items-start gap-4  z-10">
             <div className="flex flex-row gap-2">
               <p className="flex flex-row items-center gap-2 text-muted-foreground">
                 <MapPin className="size-4" />
@@ -100,7 +104,7 @@ const Hero = () => {
               <WorkHourIndicator />
             </div>
 
-            <div className="flex-1 flex flex-col justify-center items-start gap-2">
+            <div className="flex-1 flex flex-col justify-center items-start max-w-1/2 gap-2">
               <p className="font-light text-5xl antialiased ">
                 {t(`hero.title`)}
               </p>
@@ -114,7 +118,7 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-row gap-4 backdrop-blur-2xl rounded-xl">
               <div className="flex flex-col justify-center items-start text-lg font-thin text-muted-foreground">
                 <p>Peste</p>
                 <div className="flex flex-row gap-2">
@@ -158,13 +162,11 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex-1 relative">
-            <img
-              src={SmilingImg}
-              alt="smiling woman"
-              className="absolute object-cover h-[550px] -bottom-20 -right-20 "
-            />
-          </div>
+          <img
+            src={SmilingImg}
+            alt="smiling woman"
+            className="absolute object-cover h-[550px] z-0 -bottom-20 -right-20 "
+          />
         </CardContent>
       </Card>
     );

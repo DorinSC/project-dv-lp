@@ -5,6 +5,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 import CTA from "@/pages/sections/CTA";
 import Hero from "@/pages/sections/Hero";
+import Team from "./sections/Team";
 
 const Home = () => {
   return (
@@ -14,6 +15,8 @@ const Home = () => {
 
       {/* call now cta */}
       <CTA />
+
+      <Team />
 
       {/* Contact us */}
       <div className="h-[500px] flex flex-row mx-20 my-8 gap-8">
