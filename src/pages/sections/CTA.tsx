@@ -20,9 +20,9 @@ const CTA = () => {
           duration={4}
         />
 
-        <div className="relative inline-flex w-full p-5 bg-blue-500">
+        <div className="relative inline-flex h-[180px] w-full p-5 bg-blue-500">
           <div className="flex flex-col justify-between items-center gap-4 w-full ">
-            <p className="text-xl font-thin text-accent text-center antialiased ">
+            <p className="text-xl font-thin text-center text-white antialiased ">
               {t(`cta.message`)}{" "}
               <AnimatedWordCycle
                 words={[
@@ -38,7 +38,7 @@ const CTA = () => {
             <Button
               variant="secondary"
               size="lg"
-              className="w-3xs text-lg font-semibold text-green-600"
+              className="w-3xs text-lg font-semibold text-green-600 hover:text-green-700 bg-green-100 hover:bg-green-200 transition-all ease-in-out duration-300"
             >
               <Phone className="size-4" />
               +357 07 1234 567

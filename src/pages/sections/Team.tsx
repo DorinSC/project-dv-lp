@@ -4,7 +4,8 @@ import { useIsMobile } from "@/hooks/isMobile";
 import person1Image from "@/assets/team/dentist1.jpg";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { Separator } from "@/components/ui/separator";
+import SectionLabel from "@/components/sectionLabel";
+import SectionContainer from "@/components/sectionContainer";
 
 interface Member {
   name: string;
@@ -64,13 +65,16 @@ const MemberCard = ({
 
   return (
     <div
-      className="relative overflow-hidden"
+      className="relative overflow-hidden snap-start"
       onMouseEnter={() => setShowDetails(true)}
       onMouseLeave={() => setShowDetails(false)}
     >
-      <img src={img} alt={`${name} ${surname}`} className={cn("", className)} />
+      <img
+        src={img}
+        alt={`${name} ${surname}`}
+        className={cn("object-cover w-full h-full", className)}
+      />
 
-      {/* Always render this block and control visibility with opacity */}
       <div
         className={cn(
           "absolute bottom-0 h-1/3 w-full p-4 rounded-b-lg text-muted-foreground transition-all duration-300 ease-in-out",
@@ -91,32 +95,30 @@ const MemberCard = ({
 const Team = () => {
   const isMobile = useIsMobile();
 
-  if (isMobile) {
-    return <h1>this is mobile view for teams</h1>;
-  } else {
-    return (
-      <div className="flex flex-col mx-20 my-8 gap-4">
-        <div className="flex flex-col gap-2">
-          <h1 className="font-bold tracking-wide text-5xl text-blue-600 uppercase antialiased">
-            Our Team
-          </h1>
-          <Separator />
-        </div>
+  return (
+    <SectionContainer className="flex flex-col">
+      <SectionLabel>Our team</SectionLabel>
 
-        <AnimatedGroup
-          className="flex flex-row gap-4 justify-between"
-          preset="blur"
-        >
-          {team.map((member) => (
-            <MemberCard
-              data={member}
-              className="h-auto max-h-[400px] w-full rounded-lg"
-            />
-          ))}
-        </AnimatedGroup>
-      </div>
-    );
-  }
+      <AnimatedGroup
+        className={cn(
+          "flex flex-row gap-4 justify-start flex-nowrap overflow-x-auto scrollbar-hide scroll-snap-x snap-mandatory",
+          isMobile && "pb-2"
+        )}
+        preset="blur"
+      >
+        {team.map((member, idx) => (
+          <MemberCard
+            key={idx}
+            data={member}
+            className={cn(
+              "rounded-lg flex-shrink-0",
+              isMobile ? "min-w-[250px] h-[350px]" : "w-full max-h-[400px]"
+            )}
+          />
+        ))}
+      </AnimatedGroup>
+    </SectionContainer>
+  );
 };
 
 export default Team;

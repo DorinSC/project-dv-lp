@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Ranga:wght@400;700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -119,15 +120,21 @@
   }
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
+.font-ranga {
+  font-family: "Ranga", cursive;
 }
 
-.animate-gradient {
-  animation: gradient linear infinite;
+.outlined {
+  text-shadow: -1px -1px 0 #155dfc, 1px -1px 0 #155dfc, -1px 1px 0 #155dfc,
+    1px 1px 0 #155dfc;
+  color: var(--color-background);
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }

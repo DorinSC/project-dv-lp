@@ -1,7 +1,10 @@
 import GMap from "@/components/maps/gMap";
+import SectionContainer from "@/components/sectionContainer";
+import SectionLabel from "@/components/sectionLabel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useIsMobile } from "@/hooks/isMobile";
+import { cn } from "@/lib/utils";
 import { CalendarCheck, CalendarX, Mail, MapPin, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -9,17 +12,22 @@ const ContactUs = () => {
   const isMobile = useIsMobile();
   const { t } = useTranslation();
   return (
-    <div className="flex flex-col mx-20 my-8 gap-4">
-      <div className="flex flex-col gap-2">
-        <h1 className="font-bold tracking-wide text-5xl text-blue-600 uppercase antialiased">
-          Contact Us
-        </h1>
-        <Separator />
-      </div>
+    <SectionContainer className="flex flex-col ">
+      <SectionLabel>Contact Us</SectionLabel>
 
       <Card>
-        <CardContent className="flex flex-row gap-8 backdrop-blur-2xl h-[400px]">
-          <div className="flex-1/2 flex flex-col gap-4 text-xl font-thin text-muted-foreground">
+        <CardContent
+          className={cn(
+            "flex gap-8 backdrop-blur-2xl h-[800px]",
+            isMobile ? "flex-col h-[800px]" : "flex-row h-[400px]"
+          )}
+        >
+          <div
+            className={cn(
+              "flex-1/2 flex flex-col font-thin text-muted-foreground",
+              isMobile ? " gap-4 text-lg" : " gap-8 text-xl"
+            )}
+          >
             <div className="flex-1 my-auto">
               <p className="mb-2 text-blue-600">
                 {t(`contactus.location.title`)}
@@ -67,7 +75,7 @@ const ContactUs = () => {
           </div>
         </CardContent>
       </Card>
-    </div>
+    </SectionContainer>
   );
 };
 

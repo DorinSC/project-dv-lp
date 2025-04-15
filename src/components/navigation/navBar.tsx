@@ -10,24 +10,25 @@ import {
   DrawerContent,
   DrawerFooter,
   DrawerTrigger,
-} from "../ui/drawer";
+} from "@/components/ui/drawer";
+import toothLogo from "@/assets/logo/toothlogo.svg";
 import { useTranslation } from "react-i18next";
 
 const navItems = [
   {
-    label: "promotions",
+    title: "promotions",
     href: "/promotions",
   },
   {
-    label: "services",
+    title: "services",
     href: "/services",
   },
   {
-    label: "blog",
+    title: "blog",
     href: "/blog",
   },
   {
-    label: "contactus",
+    title: "contactus",
     href: "/contact-us",
   },
 ];
@@ -38,8 +39,19 @@ const NavBar = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex flex-row py-2 px-4 border border-b-[1px] border-border/50 justify-between bg-background/50 backdrop-blur-md">
-      <div className="flex items-center">
-        <Link to="/">logo</Link>
+      <div className="flex space-x-2">
+        <Link
+          to="/"
+          className="flex flex-row justify-baseline items-center text-3xl  font-bold font-ranga outlined"
+        >
+          <span>Dental</span>
+          <img
+            src={toothLogo}
+            alt="Tooth Logo"
+            className="w-6 h-6 mx-1 inline-block "
+          />
+          <span>Vlad</span>
+        </Link>
       </div>
 
       {isMobile ? (
@@ -57,12 +69,12 @@ const NavBar = () => {
                 <div className="flex flex-col gap-4">
                   {navItems.map((item) => (
                     <Button
-                      key={item.label}
+                      key={item.title}
                       variant="ghost"
                       size="lg"
                       className="justify-start text-lg font-semibold"
                     >
-                      <Link to={item.href}>{t(`navitems.${item.label}`)}</Link>
+                      <Link to={item.href}>{t(`navitems.${item.title}`)}</Link>
                     </Button>
                   ))}
                 </div>
@@ -84,8 +96,8 @@ const NavBar = () => {
         <>
           <div className="flex flex-row gap-4">
             {navItems.map((item) => (
-              <Button variant="ghost" key={item.label} className="text-md ">
-                <Link to={item.href}>{t(`navitems.${item.label}`)}</Link>
+              <Button variant="ghost" key={item.title} className="text-md ">
+                <Link to={item.href}>{t(`navitems.${item.title}`)}</Link>
               </Button>
             ))}
           </div>
