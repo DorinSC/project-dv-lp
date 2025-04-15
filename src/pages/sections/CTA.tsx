@@ -59,7 +59,7 @@ const CTA = () => {
 
         <Card className="relative inline-flex w-full p-10 bg-blue-500 border-none">
           <CardContent className="flex flex-row justify-between w-full ">
-            <p className="text-2xl font-thin text-accent antialiased ">
+            <p className="text-2xl font-thin text-white antialiased ">
               {t(`cta.message`)}{" "}
               <AnimatedWordCycle
                 words={[
@@ -76,7 +76,7 @@ const CTA = () => {
             <Button
               variant="secondary"
               size="lg"
-              className="w-sm text-lg font-semibold text-green-600"
+              className="w-sm text-lg font-semibold text-green-600 hover:text-green-700 bg-green-100 hover:bg-green-200 transition-all ease-in-out duration-300"
             >
               <Phone className="size-4" />
               +357 07 1234 567

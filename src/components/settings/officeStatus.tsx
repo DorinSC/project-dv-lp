@@ -88,7 +88,7 @@ const WorkHourIndicator = () => {
   return (
     <p className={`flex flex-row items-center gap-2 ${className}`}>
       {icon}
-      {t(`workingHours.${text}`)}
+      {t(`officeStatus.${text}`)}
     </p>
   );
 };

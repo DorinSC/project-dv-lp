@@ -11,7 +11,7 @@ function App() {
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <NavBar />
-      <div className="pt-20 ">
+      <div className="pt-20 max-w-[1280px] mx-auto">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/promotions" element={<Promotions />} />

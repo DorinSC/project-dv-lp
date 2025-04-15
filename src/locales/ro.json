@@ -1,5 +1,14 @@
 {
-  "workingHours": {
+  "weekDays": {
+    "monday": "luni",
+    "tuesday": "marți",
+    "wendsday": "miercuri",
+    "thursday": "joi",
+    "friday": "vineri",
+    "saturday": "sâmbătă",
+    "sunday": "duminică"
+  },
+  "officeStatus": {
     "open": "deschis",
     "closing": "se inchide curând",
     "closed": "închis"
@@ -28,5 +37,17 @@
     "cleaning": "Curățenie",
     "cariesremoval": "Indepartarea cariilor",
     "reconstruction": "Reconstrucţie"
+  },
+  "contactus": {
+    "location": {
+      "title": "Unde să ne găsești",
+      "address": "Strada Decebal 31, or. Bălţi, Moldova"
+    },
+    "workhours": {
+      "title": "Program de lucru"
+    },
+    "contacts": {
+      "title": "Contactele noastre"
+    }
   }
 }

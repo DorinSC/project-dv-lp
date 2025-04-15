@@ -1,5 +1,14 @@
 {
-  "workingHours": {
+  "weekDays": {
+    "monday": "lunedì",
+    "tuesday": "martedì",
+    "wendsday": "mercoledì",
+    "thursday": "jogiovedì",
+    "friday": "venerdì",
+    "saturday": "sabato",
+    "sunday": "domenica"
+  },
+  "officeStatus": {
     "open": "aperto",
     "closing": "chiudendo presto",
     "closed": "chiuso"
@@ -28,5 +37,17 @@
     "cleaning": "Pulizia",
     "cariesremoval": "Rimozione della carie",
     "reconstruction": "Ricostruzione"
+  },
+  "contactus": {
+    "location": {
+      "title": "Unde să ne găsești",
+      "address": "Strada Decebal 31,  città. Balti, Moldavia"
+    },
+    "workhours": {
+      "title": "Orario di lavoro"
+    },
+    "contacts": {
+      "title": "I nostri contatti"
+    }
   }
 }

@@ -48,7 +48,7 @@ const NavBar = () => {
           <LanguageToggle />
           <Drawer>
             <DrawerTrigger>
-              <Button size="icon" variant="outline">
+              <Button size="icon" variant="ghost">
                 <Menu />
               </Button>
             </DrawerTrigger>

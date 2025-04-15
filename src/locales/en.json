@@ -1,5 +1,14 @@
 {
-  "workingHours": {
+  "weekDays": {
+    "monday": "monday",
+    "tuesday": "tuesday",
+    "wendsday": "wendsday",
+    "thursday": "thursday",
+    "friday": "friday",
+    "saturday": "saturday",
+    "sunday": "sunday"
+  },
+  "officeStatus": {
     "open": "open",
     "closing": "closing soon",
     "closed": "closed"
@@ -28,5 +37,17 @@
     "cleaning": "Cleaning",
     "cariesremoval": "Caries removal",
     "reconstruction": "Reconstruction"
+  },
+  "contactus": {
+    "location": {
+      "title": "Where to find us",
+      "address": "Decebal Street 31, Balti, Moldova"
+    },
+    "workhours": {
+      "title": "Working schedule"
+    },
+    "contacts": {
+      "title": "Our contacts"
+    }
   }
 }

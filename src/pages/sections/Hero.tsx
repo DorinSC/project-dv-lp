@@ -4,8 +4,7 @@ import { MapPin } from "lucide-react";
 import SmilingImg from "@/assets/smiling-w.png";
 import { useTranslation } from "react-i18next";
 import { useIsMobile } from "@/hooks/isMobile";
-import WorkHourIndicator from "@/components/settings/workHourIndicator";
-import { TextEffect } from "@/components/effects/textEffect";
+import WorkHourIndicator from "@/components/settings/officeStatus";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -17,10 +16,13 @@ const Hero = () => {
         <div className="flex flex-col h-[350px] mx-5 bg-background overflow-hidden">
           <div className="flex-1 flex flex-col justify-between items-start gap-4  z-10">
             <div className="flex flex-row gap-2 text-sm">
-              <p className="flex flex-row items-center gap-2 text-muted-foreground">
+              <a
+                href="https://maps.app.goo.gl/DpASuLvw7wRc2Yw67"
+                className="flex flex-row items-center gap-2 text-muted-foreground cursor-pointer"
+              >
                 <MapPin className="size-4" />
                 {t(`hero.address`)}
-              </p>
+              </a>
               <Separator orientation="vertical" />
               <WorkHourIndicator />
             </div>
@@ -31,9 +33,7 @@ const Hero = () => {
               </p>
 
               <p className="font-bold tracking-wide text-4xl text-blue-600 uppercase antialiased ">
-                <TextEffect per="char" preset="blur">
-                  {t(`hero.titlebold`)}
-                </TextEffect>
+                {t(`hero.titlebold`)}
               </p>
               <Separator />
               <p className="font-light text-sm text-muted-foreground">
@@ -46,10 +46,10 @@ const Hero = () => {
           <img
             src={SmilingImg}
             alt="smiling woman"
-            className="absolute object-cover bottom-0 h-[300px] left-1/2 -translate-x-1/2"
+            className="absolute object-cover bottom-1 h-[300px] left-1/2 -translate-x-1/2"
           />
 
-          <div className="flex flex-row gap-2 z-10 w-full h-20 p-2 justify-center backdrop-blur-2xl ">
+          <div className="flex flex-row gap-2 z-10 w-full h-20 p-2 justify-center bg-background/80 backdrop-blur-2xl ">
             <div className="flex flex-col justify-center items-start text-md font-thin text-muted-foreground">
               <p>Mai mult de</p>
 
@@ -100,10 +100,13 @@ const Hero = () => {
         <CardContent className="flex flex-row h-full ">
           <div className="flex-1 flex flex-col justify-between items-start gap-4  z-10">
             <div className="flex flex-row gap-2">
-              <p className="flex flex-row items-center gap-2 text-muted-foreground">
+              <a
+                href="https://maps.app.goo.gl/DpASuLvw7wRc2Yw67"
+                className="flex flex-row items-center gap-2 text-muted-foreground cursor-pointer"
+              >
                 <MapPin className="size-4" />
                 {t(`hero.address`)}
-              </p>
+              </a>
               <Separator orientation="vertical" />
               <WorkHourIndicator />
             </div>
@@ -114,9 +117,7 @@ const Hero = () => {
               </p>
 
               <p className="font-bold tracking-wide text-6xl text-blue-600 uppercase antialiased ">
-                <TextEffect per="char" preset="blur">
-                  {t(`hero.titlebold`)}
-                </TextEffect>
+                {t(`hero.titlebold`)}
               </p>
               <Separator />
               <p className="font-light text-md text-muted-foreground">
@@ -125,7 +126,7 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-row gap-4 p-2 backdrop-blur-2xl rounded-xl">
-              <div className="flex flex-col justify-center items-start text-lg font-thin text-muted-foreground">
+              <div className="flex flex-col justify-center items-start text-lg font-thin ">
                 <p>Mai mult de</p>
                 <div className="flex flex-row gap-2">
                   <p className="font-bold text-xl text-blue-600 text-center">

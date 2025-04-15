@@ -1,5 +1,14 @@
 {
-  "workingHours": {
+  "weekDays": {
+    "monday": "понедельник",
+    "tuesday": "вторник",
+    "wendsday": "среда",
+    "thursday": "четверг",
+    "friday": "пятница",
+    "saturday": "суббота",
+    "sunday": "воскресенье"
+  },
+  "officeStatus": {
     "open": "открыто",
     "closing": "скоро закроется",
     "closed": "закрыто"
@@ -28,5 +37,17 @@
     "cleaning": "Чистка",
     "cariesremoval": "Удаление кариеса",
     "reconstruction": "Реконструкция"
+  },
+  "contactus": {
+    "location": {
+      "title": "Где нас найти",
+      "address": "Улица Дечебал, 31, город. Бельцы, Молдова"
+    },
+    "workhours": {
+      "title": "Рабочий график"
+    },
+    "contacts": {
+      "title": "Наши контакты"
+    }
   }
 }
