@@ -1,4 +1,8 @@
 {
+  "notfound": {
+    "title": "Die Seite existiert nicht",
+    "message": "Die gesuchte Seite existiert nicht. Versuchen Sie, mithilfe der oberen Leiste zu navigieren."
+  },
   "weekDays": {
     "monday": "Montag",
     "tuesday": "Dienstag",

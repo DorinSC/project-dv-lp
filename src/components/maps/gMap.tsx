@@ -1,29 +1,19 @@
 import React from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-
-const containerStyle = {
-  width: "100%",
-  height: "100%",
-};
-
-// Replace with your actual office coordinates
-const officeLocation = {
-  lat: 47.76615930093167, // number
-  lng: 27.904786992024466, // number
-};
 
 const GMap: React.FC = () => {
-  console.log(import.meta.env.VITE_GOOGLE_MAPS_API_KEY);
   return (
-    <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={officeLocation}
-        zoom={15}
-      >
-        <Marker position={officeLocation} />
-      </GoogleMap>
-    </LoadScript>
+    <div style={{ width: "100%", height: "100%" }}>
+      <iframe
+        title="Office Location"
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        loading="lazy"
+        allowFullScreen
+        referrerPolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11371.117786320665!2d27.904786992024466!3d47.76615930093167!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDQ1JzU4LjIiTiAyN8KwNTQnMTcuMiJF!5e0!3m2!1sen!2s!4v1713179600000!5m2!1sen!2s"
+      ></iframe>
+    </div>
   );
 };
 

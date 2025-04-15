@@ -1,4 +1,8 @@
 {
+  "notfound": {
+    "title": "Pagina nu există",
+    "message": "Pagina căutată nu există. Încercați să navigați utilizând bara de sus."
+  },
   "weekDays": {
     "monday": "luni",
     "tuesday": "marți",

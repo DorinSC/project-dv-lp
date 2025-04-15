@@ -5,7 +5,7 @@ import Services from "@/pages/Services";
 import NavBar from "@/components/navigation/navBar";
 import Promotions from "@/pages/Promotions";
 import Blog from "@/pages/Blog";
-import ContactUs from "@/pages/ContactUs";
+import NotFound from "@/pages/NotFound";
 
 function App() {
   return (
@@ -17,7 +17,8 @@ function App() {
           <Route path="/promotions" element={<Promotions />} />
           <Route path="/services" element={<Services />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/blog/:slug" element={<Blog />} /> {/*not working */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </ThemeProvider>

@@ -11,17 +11,63 @@ import {
   DrawerFooter,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+  NavigationMenuLink,
+} from "@/components/ui/navigation-menu";
 import toothLogo from "@/assets/logo/toothlogo.svg";
 import { useTranslation } from "react-i18next";
+import { cn } from "@/lib/utils";
 
 const navItems = [
   {
     title: "promotions",
     href: "/promotions",
+    layout: "featured", // specify custom layout
+    subitems: [
+      {
+        title: "promotion 1",
+        href: "/promotions/1",
+        description: "lorem ipsum",
+      },
+      {
+        title: "promotion 2",
+        href: "/promotions/2",
+        description: "lorem ipsum ipsum lorem",
+      },
+      {
+        title: "promotion 3",
+        href: "/promotions/3",
+        description: "lorem ipsum lorem ipsum",
+      },
+    ],
   },
   {
     title: "services",
     href: "/services",
+    layout: "columns-2", // another custom layout
+    subitems: [
+      { title: "service 1", href: "/services/1", description: "lorem ipsum" },
+      {
+        title: "service 2",
+        href: "/services/2",
+        description: "lorem ipsum ipsum lorem",
+      },
+      {
+        title: "service 3",
+        href: "/services/3",
+        description: "lorem ipsum lorem ipsum",
+      },
+      {
+        title: "service 4",
+        href: "/services/4",
+        description: "lorem ipsum lorem ipsum",
+      },
+    ],
   },
   {
     title: "blog",
@@ -38,7 +84,12 @@ const NavBar = () => {
   const { t } = useTranslation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex flex-row py-2 px-4 border border-b-[1px] border-border/50 justify-between bg-background/50 backdrop-blur-md">
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 flex flex-row py-2 border border-b-[1px] border-border/50 justify-between bg-background/50 backdrop-blur-md",
+        isMobile ? "px-6" : "px-40"
+      )}
+    >
       <div className="flex space-x-2">
         <Link
           to="/"
@@ -93,14 +144,116 @@ const NavBar = () => {
           </Drawer>
         </div>
       ) : (
+        // <>
+        //   <div className="flex flex-row gap-4">
+        //     {navItems.map((item) => (
+        //       <Button variant="ghost" key={item.title} className="text-md ">
+        //         <Link to={item.href}>{t(`navitems.${item.title}`)}</Link>
+        //       </Button>
+        //     ))}
+        //   </div>
+        //   <div className="flex flex-row gap-4">
+        //     <ThemeToggle />
+        //     <LanguageToggle />
+        //   </div>
+        // </>
         <>
-          <div className="flex flex-row gap-4">
-            {navItems.map((item) => (
-              <Button variant="ghost" key={item.title} className="text-md ">
-                <Link to={item.href}>{t(`navitems.${item.title}`)}</Link>
-              </Button>
-            ))}
-          </div>
+          <NavigationMenu>
+            <NavigationMenuList>
+              {navItems.map((item) => (
+                <NavigationMenuItem key={item.title}>
+                  {item.subitems ? (
+                    <>
+                      <NavigationMenuTrigger className="bg-transparent">
+                        <Link to={item.href}>
+                          {t(`navitems.${item.title}`)}
+                        </Link>
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        {item.layout === "featured" && (
+                          <div className="grid grid-cols-2 gap-4 p-4 w-[500px]">
+                            <div>
+                              {/* First item prominently displayed */}
+                              {item.subitems[0] && (
+                                <Link to={item.subitems[0].href}>
+                                  <NavigationMenuLink className="block p-4 h-full rounded-lg bg-muted hover:bg-muted/70">
+                                    <div className="font-semibold text-lg">
+                                      {t(`navitems.${item.subitems[0].title}`)}
+                                    </div>
+                                    <p className="text-sm text-muted-foreground">
+                                      {t(
+                                        `navitems.${item.subitems[0].description}`
+                                      )}
+                                    </p>
+                                  </NavigationMenuLink>
+                                </Link>
+                              )}
+                            </div>
+                            <div className="flex flex-col gap-2">
+                              {item.subitems.slice(1).map((subitem) => (
+                                <Link to={subitem.href} key={subitem.title}>
+                                  <NavigationMenuLink className="block p-2 rounded-lg hover:bg-muted">
+                                    <div className="font-medium">
+                                      {t(`navitems.${subitem.title}`)}
+                                    </div>
+                                    <p className="text-sm text-muted-foreground">
+                                      {t(`navitems.${subitem.description}`)}
+                                    </p>
+                                  </NavigationMenuLink>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {item.layout === "columns-2" && (
+                          <div className="grid grid-cols-2 gap-4 p-4 w-[500px]">
+                            {item.subitems.map((subitem) => (
+                              <Link to={subitem.href} key={subitem.title}>
+                                <NavigationMenuLink className="block p-2 rounded-lg hover:bg-muted">
+                                  <div className="font-medium">
+                                    {t(`navitems.${subitem.title}`)}
+                                  </div>
+                                  <p className="text-sm text-muted-foreground">
+                                    {t(`navitems.${subitem.description}`)}
+                                  </p>
+                                </NavigationMenuLink>
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+
+                        {/* Default layout if no special layout provided */}
+                        {!item.layout && (
+                          <div className="p-4 w-[200px]">
+                            {item.subitems.map((subitem) => (
+                              <Link to={subitem.href} key={subitem.title}>
+                                <NavigationMenuLink className="block p-2 rounded-lg hover:bg-muted">
+                                  <div className="font-medium">
+                                    {t(`navitems.${subitem.title}`)}
+                                  </div>
+                                  <p className="text-sm text-muted-foreground">
+                                    {t(`navitems.${subitem.description}`)}
+                                  </p>
+                                </NavigationMenuLink>
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </NavigationMenuContent>
+                    </>
+                  ) : (
+                    <Link to={item.href}>
+                      <NavigationMenuLink className="p-2">
+                        {t(`navitems.${item.title}`)}
+                      </NavigationMenuLink>
+                    </Link>
+                  )}
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+
           <div className="flex flex-row gap-4">
             <ThemeToggle />
             <LanguageToggle />

@@ -76,7 +76,7 @@ const LanguageToggle: React.FC = () => {
           </Button>
         )}
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="border-border/50 bg-background/50 backdrop-blur-sm">
+      <DropdownMenuContent className="border-border bg-popover">
         {languages.map((item) => (
           <DropdownMenuItem
             key={item.value}
