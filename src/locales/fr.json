@@ -1,0 +1,32 @@
+{
+  "workingHours": {
+    "open": "ouvrir",
+    "closing": "fermeture bientôt",
+    "closed": "fermé"
+  },
+  "navitems": {
+    "promotions": "Promotions",
+    "services": "Services",
+    "blog": "Blog",
+    "contactus": "Contacts",
+    "appointment": "Prenez rendez-vous maintenant"
+  },
+  "footer": {
+    "firstcolumntitle": "Comment nous trouver?"
+  },
+  "hero": {
+    "address": "Clinique dentaire à Balti",
+    "title": "Notre priorité est",
+    "titlebold": "ton sourire",
+    "description": "Depuis plus de 10 ans, votre sourire est notre priorité, vous êtes toujours le bienvenu à la clinique dentaire Dental Vlad"
+  },
+  "cta": {
+    "message": "Appelez maintenant et prenez rendez-vous pour",
+    "consultation": "Consultation",
+    "scaling": "Mise à l'échelle",
+    "implant": "Implant",
+    "cleaning": "Nettoyage",
+    "cariesremoval": "Élimination des caries",
+    "reconstruction": "Reconstruction"
+  }
+}

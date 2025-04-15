@@ -1,0 +1,32 @@
+{
+  "workingHours": {
+    "open": "offen",
+    "closing": "bald geschlossen",
+    "closed": "geschlossen"
+  },
+  "navitems": {
+    "promotions": "Werbeaktionen",
+    "services": "Dienstleistungen",
+    "blog": "Blog",
+    "contactus": "Kontakte",
+    "appointment": "Vereinbaren Sie jetzt einen Termin"
+  },
+  "footer": {
+    "firstcolumntitle": "Wie finden Sie uns?"
+  },
+  "hero": {
+    "address": "Zahnklinik in Balti",
+    "title": "Unsere Priorität ist",
+    "titlebold": "Dein Lächeln",
+    "description": "Seit mehr als 10 Jahren ist Ihr Lächeln unsere Priorität. Sie sind in der Zahnklinik Dental Vlad immer willkommen."
+  },
+  "cta": {
+    "message": "Jetzt anrufen und Termin vereinbaren für",
+    "consultation": "Beratung",
+    "scaling": "Skalierung",
+    "implant": "Implantieren",
+    "cleaning": "Reinigung",
+    "cariesremoval": "Kariesentfernung",
+    "reconstruction": "Wiederaufbau"
+  }
+}

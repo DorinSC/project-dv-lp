@@ -5,6 +5,7 @@ import SmilingImg from "@/assets/smiling-w.png";
 import { useTranslation } from "react-i18next";
 import { useIsMobile } from "@/hooks/isMobile";
 import WorkHourIndicator from "@/components/settings/workHourIndicator";
+import { TextEffect } from "@/components/effects/textEffect";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -30,7 +31,9 @@ const Hero = () => {
               </p>
 
               <p className="font-bold tracking-wide text-4xl text-blue-600 uppercase antialiased ">
-                {t(`hero.titlebold`)}
+                <TextEffect per="char" preset="blur">
+                  {t(`hero.titlebold`)}
+                </TextEffect>
               </p>
               <Separator />
               <p className="font-light text-sm text-muted-foreground">
@@ -46,21 +49,22 @@ const Hero = () => {
             className="absolute object-cover bottom-0 h-[300px] left-1/2 -translate-x-1/2"
           />
 
-          <div className="flex flex-row gap-2 z-10 w-full h-20 justify-center backdrop-blur-2xl ">
+          <div className="flex flex-row gap-2 z-10 w-full h-20 p-2 justify-center backdrop-blur-2xl ">
             <div className="flex flex-col justify-center items-start text-md font-thin text-muted-foreground">
-              <p>Peste</p>
+              <p>Mai mult de</p>
+
               <div className="flex flex-row gap-1">
-                +
                 <p className="font-bold text-lg text-blue-600 text-center">
                   10
                 </p>{" "}
-                ani
+                <p>ani</p>
               </div>
+
               <p>experienta</p>
             </div>
             <Separator orientation="vertical" />
             <div className="flex flex-col justify-center items-start text-md font-thin text-muted-foreground">
-              <p>Mai mult de</p>
+              <p>Oferim peste</p>
               <p className="font-bold text-lg text-blue-600 text-center">30</p>
               <p>servicii</p>
             </div>
@@ -71,7 +75,7 @@ const Hero = () => {
                 <p className="font-bold text-lg text-blue-600 text-center">
                   5000
                 </p>{" "}
-                +
+                <p>+</p>
               </div>
               <p>clienti tratati</p>
             </div>
@@ -82,9 +86,9 @@ const Hero = () => {
                 <p className="font-bold text-lg text-blue-600 text-center">
                   100
                 </p>{" "}
-                %
+                <p>%</p>
               </div>
-              <p>calitate.</p>
+              <p>calitate</p>
             </div>
           </div>
         </div>
@@ -110,7 +114,9 @@ const Hero = () => {
               </p>
 
               <p className="font-bold tracking-wide text-6xl text-blue-600 uppercase antialiased ">
-                {t(`hero.titlebold`)}
+                <TextEffect per="char" preset="blur">
+                  {t(`hero.titlebold`)}
+                </TextEffect>
               </p>
               <Separator />
               <p className="font-light text-md text-muted-foreground">
@@ -118,20 +124,20 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex flex-row gap-4 backdrop-blur-2xl rounded-xl">
+            <div className="flex flex-row gap-4 p-2 backdrop-blur-2xl rounded-xl">
               <div className="flex flex-col justify-center items-start text-lg font-thin text-muted-foreground">
-                <p>Peste</p>
+                <p>Mai mult de</p>
                 <div className="flex flex-row gap-2">
                   <p className="font-bold text-xl text-blue-600 text-center">
                     10
                   </p>{" "}
-                  ani
+                  <p>ani</p>
                 </div>
                 <p>experienta</p>
               </div>
               <Separator orientation="vertical" />
               <div className="flex flex-col justify-center items-start text-lg font-thin text-muted-foreground">
-                <p>Mai mult de</p>
+                <p>Oferim peste</p>
                 <p className="font-bold text-xl text-blue-600 text-center">
                   30
                 </p>
@@ -144,7 +150,7 @@ const Hero = () => {
                   <p className="font-bold text-xl text-blue-600 text-center">
                     5000
                   </p>{" "}
-                  +
+                  <p>+</p>
                 </div>
                 <p>clienti tratati</p>
               </div>
@@ -155,7 +161,7 @@ const Hero = () => {
                   <p className="font-bold text-xl text-blue-600 text-center">
                     100
                   </p>{" "}
-                  %
+                  <p>%</p>
                 </div>
                 <p>calitate.</p>
               </div>
@@ -165,7 +171,7 @@ const Hero = () => {
           <img
             src={SmilingImg}
             alt="smiling woman"
-            className="absolute object-cover h-[550px] z-0 -bottom-20 -right-20 "
+            className="absolute object-cover h-[550px] z-0 -bottom-20 -right-20"
           />
         </CardContent>
       </Card>
