@@ -22,6 +22,8 @@ import {
 import toothLogo from "@/assets/logo/toothlogo.svg";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
+import CallButton from "../settings/callButton";
+import { handleCall } from "@/lib/handleCall";
 
 const navItems = [
   {
@@ -86,20 +88,23 @@ const NavBar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 flex flex-row py-2 border border-b-[1px] border-border/50 justify-between bg-background/50 backdrop-blur-md",
-        isMobile ? "px-6" : "px-40"
+        "fixed top-0 left-0 right-0 z-50 px-40 flex flex-row py-2 border border-b-[1px] border-border/50 justify-between bg-background ",
+        isMobile && "px-4"
       )}
     >
       <div className="flex space-x-2">
         <Link
           to="/"
-          className="flex flex-row justify-baseline items-center text-3xl  font-bold font-ranga outlined"
+          className={cn(
+            "flex flex-row justify-baseline items-center text-3xl  font-bold font-ranga outlined",
+            isMobile && "text-2xl"
+          )}
         >
           <span>Dental</span>
           <img
             src={toothLogo}
             alt="Tooth Logo"
-            className="w-6 h-6 mx-1 inline-block "
+            className={cn("w-6 h-6 mx-1 inline-block", isMobile && "w-5 h-5")}
           />
           <span>Vlad</span>
         </Link>
@@ -107,6 +112,7 @@ const NavBar = () => {
 
       {isMobile ? (
         <div className="flex flex-row gap-2">
+          <CallButton />
           <ThemeToggle />
           <LanguageToggle />
           <Drawer>
@@ -135,6 +141,7 @@ const NavBar = () => {
                   variant="default"
                   size="lg"
                   className="text-lg font-semibold text-green-600 border border-green-200 bg-green-100/50 hover:bg-green-100/90 dark:border-green-700 dark:bg-green-800/50 dark:hover:bg-green-800/90"
+                  onClick={() => isMobile && handleCall()}
                 >
                   <Phone />
                   {t("navitems.appointment")}
@@ -144,19 +151,6 @@ const NavBar = () => {
           </Drawer>
         </div>
       ) : (
-        // <>
-        //   <div className="flex flex-row gap-4">
-        //     {navItems.map((item) => (
-        //       <Button variant="ghost" key={item.title} className="text-md ">
-        //         <Link to={item.href}>{t(`navitems.${item.title}`)}</Link>
-        //       </Button>
-        //     ))}
-        //   </div>
-        //   <div className="flex flex-row gap-4">
-        //     <ThemeToggle />
-        //     <LanguageToggle />
-        //   </div>
-        // </>
         <>
           <NavigationMenu>
             <NavigationMenuList>
@@ -255,6 +249,7 @@ const NavBar = () => {
           </NavigationMenu>
 
           <div className="flex flex-row gap-4">
+            <CallButton />
             <ThemeToggle />
             <LanguageToggle />
           </div>

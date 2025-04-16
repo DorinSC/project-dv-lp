@@ -14,7 +14,7 @@ const SectionLabel = ({
   return (
     <div
       className={cn(
-        "flex flex-col font-bold tracking-wide text-blue-600 uppercase antialiased",
+        "flex flex-col font-normal tracking-tighter antialiased",
         isMobile ? "text-3xl gap-2" : "text-5xl gap-4",
         className
       )}

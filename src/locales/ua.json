@@ -42,7 +42,16 @@
     "cariesremoval": "Видалення карієсу",
     "reconstruction": "Реконструкція"
   },
+  "services": {
+    "title": "Послуги",
+    "currencyDisclaimer": "Ціни в MDL*"
+  },
+  "testimonials": {
+    "title": "Відгук",
+    "message": "Ваша думка завжди має значення"
+  },
   "contactus": {
+    "title": "Контакти",
     "location": {
       "title": "Де нас знайти",
       "address": "Децебал, 31, м. Бельцы, Молдова"

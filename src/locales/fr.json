@@ -42,7 +42,16 @@
     "cariesremoval": "Élimination des caries",
     "reconstruction": "Reconstruction"
   },
+  "services": {
+    "title": "Services",
+    "currencyDisclaimer": "Les prix sont en MDL*"
+  },
+  "testimonials": {
+    "title": "Témoignages",
+    "message": "Votre avis compte toujours"
+  },
   "contactus": {
+    "title": "Contacts",
     "location": {
       "title": "Où nous trouver",
       "address": "31 rue Decebal, ville. Balti, Moldavie"

@@ -42,7 +42,16 @@
     "cariesremoval": "Kariesentfernung",
     "reconstruction": "Wiederaufbau"
   },
+  "services": {
+    "title": "Dienstleistungen",
+    "currencyDisclaimer": "Die Preise liegen vor MDL*"
+  },
+  "testimonials": {
+    "title": "Erfahrungsberichte",
+    "message": "Ihre Meinung zählt immer"
+  },
   "contactus": {
+    "title": "Kontakte",
     "location": {
       "title": "Wo Sie uns finden",
       "address": "Decebal-Straße 31, Stadt. Balti, Moldawien"

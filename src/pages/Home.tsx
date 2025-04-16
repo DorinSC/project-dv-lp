@@ -1,8 +1,8 @@
 import CTA from "@/pages/sections/CTA";
 import Hero from "@/pages/sections/Hero";
-import Team from "./sections/Team";
-import Services from "./sections/Services";
-import ContactUs from "./sections/ContactUs";
+import Services from "@/pages/sections/Services";
+import ContactUs from "@/pages/sections/ContactUs";
+import Testimonials from "@/pages/sections/Testimonials";
 
 const Home = () => {
   return (
@@ -13,7 +13,7 @@ const Home = () => {
 
       <Services />
 
-      <Team />
+      <Testimonials />
 
       <ContactUs />
     </div>

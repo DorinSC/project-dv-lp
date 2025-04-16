@@ -13,7 +13,7 @@ const ContactUs = () => {
   const { t } = useTranslation();
   return (
     <SectionContainer className="flex flex-col ">
-      <SectionLabel>Contact Us</SectionLabel>
+      <SectionLabel>{t("contactus.title")}</SectionLabel>
 
       <Card>
         <CardContent

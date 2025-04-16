@@ -42,7 +42,16 @@
     "cariesremoval": "Indepartarea cariilor",
     "reconstruction": "Reconstrucţie"
   },
+  "services": {
+    "title": "Servicii",
+    "currencyDisclaimer": "Preturile sunt in MDL*"
+  },
+  "testimonials": {
+    "title": "Mărturii",
+    "message": "Părerea ta contează întotdeauna"
+  },
   "contactus": {
+    "title": "Contacte",
     "location": {
       "title": "Unde să ne găsești",
       "address": "Strada Decebal 31, or. Bălţi, Moldova"
