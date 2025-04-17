@@ -42,6 +42,9 @@
     "cariesremoval": "Удаление кариеса",
     "reconstruction": "Реконструкция"
   },
+  "promotions": {
+    "title": "Акции"
+  },
   "services": {
     "title": "Услуги",
     "currencyDisclaimer": "Цены указаны в MDL*"
@@ -49,6 +52,12 @@
   "testimonials": {
     "title": "Отзывы",
     "message": "Ваше мнение всегда имеет значение"
+  },
+  "gallery": {
+    "title": "Галерея"
+  },
+  "team": {
+    "title": "Наша команда"
   },
   "contactus": {
     "title": "Контакты",

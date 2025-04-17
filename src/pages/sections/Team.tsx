@@ -3,9 +3,10 @@ import { useIsMobile } from "@/hooks/isMobile";
 
 import person1Image from "@/assets/team/dentist1.jpg";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
-import SectionLabel from "@/components/sectionLabel";
 import SectionContainer from "@/components/sectionContainer";
+import { useTranslation } from "react-i18next";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { GlowEffect } from "@/components/effects/glowEffect";
 
 interface Member {
   name: string;
@@ -51,6 +52,13 @@ const team: Member[] = [
     description: "Very good doctor with big experience",
     img: person1Image,
   },
+  {
+    name: "Jhon",
+    surname: "Doe",
+    jobPosition: "Dentist",
+    description: "Very good doctor with big experience",
+    img: person1Image,
+  },
 ];
 
 const MemberCard = ({
@@ -61,62 +69,81 @@ const MemberCard = ({
   className: string;
 }) => {
   const { name, surname, jobPosition, description, img } = data;
-  const [showDetails, setShowDetails] = useState<boolean>(false);
 
   return (
     <div
-      className="relative overflow-hidden snap-start"
-      onMouseEnter={() => setShowDetails(true)}
-      onMouseLeave={() => setShowDetails(false)}
+      className={cn(
+        "snap-start flex flex-col rounded-lg overflow-hidden",
+        className
+      )}
     >
-      <img
-        src={img}
-        alt={`${name} ${surname}`}
-        className={cn("object-cover w-full h-full", className)}
-      />
+      {/* Image section */}
+      <div className="flex-grow relative h-2/3">
+        <img
+          src={img}
+          alt={`${name} ${surname}`}
+          className="object-cover w-full h-full"
+        />
+      </div>
 
-      <div
-        className={cn(
-          "absolute bottom-0 h-1/3 w-full p-4 rounded-b-lg text-muted-foreground transition-all duration-300 ease-in-out",
-          showDetails
-            ? "opacity-100 backdrop-blur-sm"
-            : "opacity-0 backdrop-blur-none"
-        )}
-      >
-        <p className="flex flex-row gap-2 text-lg font-semibold text-blue-600">
+      {/* Info section */}
+      <div className="h-1/3 w-full p-4 bg-background flex flex-col justify-center">
+        <p className="text-lg font-semibold text-blue-600 truncate">
           {jobPosition}, {name} {surname}
         </p>
-        <p className="text-sm font-normal">{description}</p>
+        <p className="text-sm font-normal line-clamp-3">{description}</p>
       </div>
     </div>
   );
 };
 
 const Team = () => {
+  const { t } = useTranslation();
   const isMobile = useIsMobile();
 
   return (
-    <SectionContainer className="flex flex-col">
-      <SectionLabel>Our team</SectionLabel>
+    <SectionContainer className={cn("relative ", isMobile ? "px-0" : "mx-10")}>
+      <GlowEffect
+        colors={["#4f39f6", "#155dfc", "#0084d1", "#0092b8"]}
+        mode="colorShift"
+        blur="medium"
+        duration={4}
+      />
 
-      <AnimatedGroup
+      <Card
         className={cn(
-          "flex flex-row gap-4 justify-start flex-nowrap overflow-x-auto scrollbar-hide scroll-snap-x snap-mandatory",
-          isMobile && "pb-2"
+          "relative inline-flex w-full  bg-blue-500 border-none",
+          isMobile && "rounded-none "
         )}
-        preset="blur"
       >
-        {team.map((member, idx) => (
-          <MemberCard
-            key={idx}
-            data={member}
+        <CardHeader>
+          <CardTitle className="text-white font-thin tracking-tighter antialiased text-2xl ">
+            {t("team.message")}
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="flex space-y-20  justify-center w-full h-full items-start">
+          <AnimatedGroup
             className={cn(
-              "rounded-lg flex-shrink-0",
-              isMobile ? "min-w-[250px] h-[350px]" : "w-full max-h-[400px]"
+              "flex flex-row gap-4 py-1 justify-start flex-nowrap overflow-x-auto scrollbar-hide scroll-snap-x snap-mandatory",
+              isMobile && "pb-2"
             )}
-          />
-        ))}
-      </AnimatedGroup>
+            preset="blur"
+          >
+            {team.map((member, idx) => (
+              <MemberCard
+                key={idx}
+                data={member}
+                className={cn(
+                  "rounded-lg",
+                  isMobile
+                    ? "min-w-[250px] h-[350px]"
+                    : "min-w-[300px] max-w-[300px] h-[400px]"
+                )}
+              />
+            ))}
+          </AnimatedGroup>
+        </CardContent>
+      </Card>
     </SectionContainer>
   );
 };

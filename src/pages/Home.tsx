@@ -3,6 +3,8 @@ import Hero from "@/pages/sections/Hero";
 import Services from "@/pages/sections/Services";
 import ContactUs from "@/pages/sections/ContactUs";
 import Testimonials from "@/pages/sections/Testimonials";
+import Gallery from "@/pages/sections/Gallery";
+import Promotions from "@/pages/sections/Promotions";
 
 const Home = () => {
   return (
@@ -11,9 +13,13 @@ const Home = () => {
 
       <CTA />
 
+      <Promotions />
+
       <Services />
 
       <Testimonials />
+
+      <Gallery />
 
       <ContactUs />
     </div>

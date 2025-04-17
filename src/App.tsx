@@ -3,7 +3,6 @@ import { ThemeProvider } from "@/provider/themeProvider";
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
 import NavBar from "@/components/navigation/navBar";
-import Promotions from "@/pages/Promotions";
 import NotFound from "@/pages/NotFound";
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
       <div className="pt-20 max-w-[1280px] mx-auto">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/promotions" element={<Promotions />} />
           <Route path="/services" element={<Services />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

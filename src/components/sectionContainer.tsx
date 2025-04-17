@@ -1,6 +1,7 @@
 import { useIsMobile } from "@/hooks/isMobile";
 import { cn } from "@/lib/utils";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
+import { motion } from "framer-motion";
 
 const SectionContainer = ({
   children,
@@ -12,18 +13,22 @@ const SectionContainer = ({
   id?: string;
 }) => {
   const isMobile = useIsMobile();
+
   return (
-    <div
+    <motion.div
       id={id}
       className={cn(
-        isMobile
-          ? "flex flex-col px-5 my-10 gap-4"
-          : "flex flex-row mx-20 my-10 gap-8",
+        "flex flex-col z-20",
+        isMobile ? "px-5 my-10 gap-4" : "mx-20 my-10 gap-8",
         className
       )}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 };
 

@@ -42,6 +42,9 @@
     "cariesremoval": "Élimination des caries",
     "reconstruction": "Reconstruction"
   },
+  "promotions": {
+    "title": "Promotions"
+  },
   "services": {
     "title": "Services",
     "currencyDisclaimer": "Les prix sont en MDL*"
@@ -49,6 +52,12 @@
   "testimonials": {
     "title": "Témoignages",
     "message": "Votre avis compte toujours"
+  },
+  "gallery": {
+    "title": "Galerie"
+  },
+  "team": {
+    "title": "Notre équipe"
   },
   "contactus": {
     "title": "Contacts",

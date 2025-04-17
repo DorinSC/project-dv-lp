@@ -71,13 +71,10 @@ const navItems = [
       },
     ],
   },
-  {
-    title: "blog",
-    href: "/blog",
-  },
+
   {
     title: "contactus",
-    href: "/contact-us",
+    href: "#contact-us",
   },
 ];
 

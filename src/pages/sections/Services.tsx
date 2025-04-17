@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 
@@ -31,46 +32,56 @@ const services = [
 const Services = () => {
   const { t } = useTranslation();
   return (
-    <SectionContainer className="flex flex-col">
+    <SectionContainer className=" flex flex-col">
       <SectionLabel>{t("services.title")}</SectionLabel>
-      <div className="p-4 sm:p-10 border border-border/50 rounded-lg bg-background/50 backdrop-blur-2xl">
-        <p className="text-center pb-2 text-muted-foreground  text-sm">
-          {t("services.currencyDisclaimer")}
-        </p>
-        <Accordion type="single" collapsible>
-          {services.map((service) => (
-            <AccordionItem key={service.title} value={service.title}>
-              <AccordionTrigger
-                className={cn(
-                  "flex items-center px-3 py-2 sm:px-5 sm:py-3 hover:bg-muted/50"
-                )}
-              >
-                <div className="flex justify-between items-center w-full gap-2">
-                  <div
-                    className={cn(
-                      "text-base sm:text-xl font-medium sm:font-thin w-full sm:w-1/2"
-                    )}
-                  >
-                    {service.title}
+
+      <div className="relative rounded-lg overflow-hidden">
+        <span className="absolute -top-10 -left-10 size-80 rounded-full bg-blue-400/50 dark:bg-blue-800/50"></span>
+        <span className="absolute -bottom-10 -right-10 size-80 rounded-full bg-blue-400/50 dark:bg-blue-800/50 "></span>
+        <div className="relative p-4 sm:p-10 border border-border/50 rounded-lg bg-background/50 backdrop-blur-2xl overflow-hidden">
+          <p className="text-center pb-2 text-muted-foreground  text-sm">
+            {t("services.currencyDisclaimer")}
+          </p>
+          <Accordion type="single" collapsible>
+            {services.map((service) => (
+              <AccordionItem key={service.title} value={service.title}>
+                <AccordionTrigger
+                  className={cn(
+                    "flex items-center px-3 py-2 sm:px-5 sm:py-3 hover:bg-muted/50 rounded-none"
+                  )}
+                >
+                  <div className="flex justify-between items-center w-full gap-2">
+                    <div
+                      className={cn(
+                        "text-base sm:text-xl font-medium sm:font-thin w-full sm:w-1/2"
+                      )}
+                    >
+                      {service.title}
+                    </div>
+                    <div className="text-sm sm:text-base font-light w-full sm:w-1/2 text-right sm:text-left">
+                      {service.priceFrom && service.priceTo ? (
+                        <>
+                          {service.priceFrom} - {service.priceTo}
+                        </>
+                      ) : (
+                        service.price
+                      )}{" "}
+                      Lei
+                    </div>
                   </div>
-                  <div className="text-sm sm:text-base font-light w-full sm:w-1/2 text-right sm:text-left">
-                    {service.priceFrom && service.priceTo ? (
-                      <>
-                        {service.priceFrom} - {service.priceTo}
-                      </>
-                    ) : (
-                      service.price
-                    )}{" "}
-                    Lei
-                  </div>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground font-normal px-4 py-2 sm:px-10 sm:py-5 text-sm sm:text-base">
-                {service.description}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground font-normal px-4 py-2 sm:px-10 sm:py-5 text-sm sm:text-base">
+                  {service.description}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </div>
+      <div className="flex justify-center">
+        <Button className="w-lg" variant="ghost">
+          Mai multe servicii
+        </Button>
       </div>
     </SectionContainer>
   );

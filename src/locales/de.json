@@ -42,6 +42,9 @@
     "cariesremoval": "Kariesentfernung",
     "reconstruction": "Wiederaufbau"
   },
+  "promotions": {
+    "title": "Werbeaktionen"
+  },
   "services": {
     "title": "Dienstleistungen",
     "currencyDisclaimer": "Die Preise liegen vor MDL*"
@@ -49,6 +52,12 @@
   "testimonials": {
     "title": "Erfahrungsberichte",
     "message": "Ihre Meinung zählt immer"
+  },
+  "gallery": {
+    "title": "Galerie"
+  },
+  "team": {
+    "title": "Unser Team"
   },
   "contactus": {
     "title": "Kontakte",

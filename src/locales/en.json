@@ -42,6 +42,9 @@
     "cariesremoval": "Caries removal",
     "reconstruction": "Reconstruction"
   },
+  "promotions": {
+    "title": "Promotions"
+  },
   "services": {
     "title": "Services",
     "currencyDisclaimer": "Prices are in MDL*"
@@ -49,6 +52,12 @@
   "testimonials": {
     "title": "Testimonials",
     "message": "Your opinion always counts"
+  },
+  "gallery": {
+    "title": "Gallery"
+  },
+  "team": {
+    "title": "Our Team"
   },
   "contactus": {
     "title": "Contacts",

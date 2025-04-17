@@ -42,6 +42,9 @@
     "cariesremoval": "Indepartarea cariilor",
     "reconstruction": "Reconstrucţie"
   },
+  "promotions": {
+    "title": "Promoții"
+  },
   "services": {
     "title": "Servicii",
     "currencyDisclaimer": "Preturile sunt in MDL*"
@@ -49,6 +52,12 @@
   "testimonials": {
     "title": "Mărturii",
     "message": "Părerea ta contează întotdeauna"
+  },
+  "gallery": {
+    "title": "Galerie"
+  },
+  "team": {
+    "title": "Echipa noastră"
   },
   "contactus": {
     "title": "Contacte",

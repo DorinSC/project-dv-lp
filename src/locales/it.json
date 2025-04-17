@@ -42,6 +42,9 @@
     "cariesremoval": "Rimozione della carie",
     "reconstruction": "Ricostruzione"
   },
+  "promotions": {
+    "title": "Promozioni"
+  },
   "services": {
     "title": "Servizi",
     "currencyDisclaimer": "I prezzi sono in MDL*"
@@ -49,6 +52,12 @@
   "testimonials": {
     "title": "Testimonianze",
     "message": "La tua opinione conta sempre"
+  },
+  "gallery": {
+    "title": "Galleria"
+  },
+  "team": {
+    "title": "Il nostro team"
   },
   "contactus": {
     "title": "Contatti",

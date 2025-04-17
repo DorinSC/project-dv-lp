@@ -52,7 +52,7 @@ const CTA = () => {
     );
   } else {
     return (
-      <div id="cta-section" className="relative mx-10 my-8">
+      <SectionContainer id="cta-section" className="relative mx-10 my-8">
         <GlowEffect
           colors={["#4f39f6", "#155dfc", "#0084d1", "#0092b8"]}
           mode="colorShift"
@@ -87,7 +87,7 @@ const CTA = () => {
             </Button>
           </CardContent>
         </Card>
-      </div>
+      </SectionContainer>
     );
   }
 };
