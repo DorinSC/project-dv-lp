@@ -60,7 +60,7 @@ const CTA = () => {
           duration={4}
         />
 
-        <Card className="relative inline-flex w-full p-10 bg-blue-500 border-none">
+        <Card className="relative inline-flex w-full p-10 bg-blue-500 border-none rounded-lg">
           <CardContent className="flex flex-row justify-between w-full ">
             <p className="text-2xl font-thin tracking-tighter text-white antialiased ">
               {t(`cta.message`)}{" "}

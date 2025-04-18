@@ -1,186 +1,88 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { MapPin } from "lucide-react";
 import SmilingImg from "@/assets/smiling-w.png";
 import { useTranslation } from "react-i18next";
-import { useIsMobile } from "@/hooks/isMobile";
 import WorkHourIndicator from "@/components/settings/officeStatus";
 import SectionContainer from "@/components/sectionContainer";
+import { useIsMobile } from "@/hooks/isMobile";
+
+const indications = [
+  { main: "10 ani", secondary: "de experienta in domeniu" },
+  { main: "50000 +", secondary: "Clienti multumiti" },
+  { main: "100%", secondary: "calitate si garantie" },
+  { main: "80 +", secondary: "Servicii" },
+];
 
 const Hero = () => {
   const { t } = useTranslation();
   const isMobile = useIsMobile();
 
-  if (isMobile) {
-    return (
-      <SectionContainer className="px-0 my-0 gap-0">
-        <div className="flex flex-col h-[350px] mx-5 bg-background overflow-hidden">
-          <div className="flex-1 flex flex-col justify-between items-start gap-4  z-10">
-            <div className="flex flex-row gap-2 text-sm">
-              <a
-                href="https://maps.app.goo.gl/DpASuLvw7wRc2Yw67"
-                className="flex flex-row items-center gap-2 text-muted-foreground cursor-pointer"
-              >
-                <MapPin className="size-4" />
-                {t(`hero.address`)}
-              </a>
-              <Separator orientation="vertical" />
-              <WorkHourIndicator />
-            </div>
+  const displayedIndications = isMobile ? indications.slice(0, 3) : indications;
 
-            <div className="flex-1 flex flex-col justify-center items-center gap-2">
-              <p className="font-light text-3xl antialiased ">
-                {t(`hero.title`)}
-              </p>
+  return (
+    <SectionContainer className="px-0 my-0 gap-0">
+      <div className="relative flex flex-col lg:flex-row items-center lg:items-start justify-between w-full h-auto lg:h-[500px] bg-background  overflow-hidden px-5 pt-5 lg:p-10 rounded-lg backdrop-blur-2xl">
+        <div className="flex flex-col justify-between h-full gap-4 z-10 w-full lg:w-1/2">
+          <div className="flex flex-row gap-2 items-center text-sm">
+            <a
+              href="https://maps.app.goo.gl/DpASuLvw7wRc2Yw67"
+              className="flex flex-row items-center gap-2 text-muted-foreground cursor-pointer"
+            >
+              <MapPin className="size-4" />
+              {t(`hero.address`)}
+            </a>
+            <Separator orientation="vertical" />
+            <WorkHourIndicator />
+          </div>
 
-              <p className="font-bold tracking-wide text-4xl text-blue-600 uppercase antialiased ">
-                {t(`hero.titlebold`)}
-              </p>
-              <Separator />
-              <p className="font-light text-sm text-muted-foreground">
-                {t(`hero.description`)}
-              </p>
-            </div>
+          <div className="flex-1 flex flex-col justify-center gap-2">
+            <p className="font-light text-3xl lg:text-5xl antialiased">
+              {t(`hero.title`)}
+            </p>
+            <p className="font-bold tracking-wide text-4xl lg:text-6xl text-blue-600 uppercase antialiased">
+              {t(`hero.titlebold`)}
+            </p>
+            <Separator />
+            <p className="font-light text-sm lg:text-md text-muted-foreground">
+              {t(`hero.description`)}
+            </p>
           </div>
         </div>
-        <div className="relative mt-32">
+
+        {/* Right side (image) */}
+        <div className="relative w-full lg:w-1/2 h-[300px] lg:h-full mt-10 lg:mt-0 flex justify-center items-end">
           <img
             src={SmilingImg}
             alt="smiling woman"
-            className="absolute object-cover bottom-1 h-[300px] left-1/2 -translate-x-1/2"
+            className="object-cover h-[300px] lg:h-[550px] w-auto absolute bottom-0 lg:bottom-[-80px] left-1/2 lg:left-auto transform lg:translate-x-0 -translate-x-1/2"
           />
-
-          <div className="flex flex-row gap-2 z-10 w-full h-20 p-2 justify-center bg-background/80 backdrop-blur-2xl ">
-            <div className="flex flex-col justify-center items-start text-md font-thin text-muted-foreground">
-              <p>Mai mult de</p>
-
-              <div className="flex flex-row gap-1">
-                <p className="font-bold text-lg text-blue-600 text-center">
-                  10
-                </p>{" "}
-                <p>ani</p>
-              </div>
-
-              <p>experienta</p>
-            </div>
-            <Separator orientation="vertical" />
-            <div className="flex flex-col justify-center items-start text-md font-thin text-muted-foreground">
-              <p>Oferim peste</p>
-              <p className="font-bold text-lg text-blue-600 text-center">30</p>
-              <p>servicii</p>
-            </div>
-            <Separator orientation="vertical" />
-            <div className="flex flex-col justify-center items-start text-md font-thin text-muted-foreground">
-              <p>Mandri cu</p>
-              <div className="flex flex-row gap-1">
-                <p className="font-bold text-lg text-blue-600 text-center">
-                  5000
-                </p>{" "}
-                <p>+</p>
-              </div>
-              <p>clienti tratati</p>
-            </div>
-            <Separator orientation="vertical" />
-            <div className="flex flex-col justify-center items-start text-md font-thin text-muted-foreground">
-              <p>Garantam</p>
-              <div className="flex flex-row gap-1">
-                <p className="font-bold text-lg text-blue-600 text-center">
-                  100
-                </p>{" "}
-                <p>%</p>
-              </div>
-              <p>calitate</p>
-            </div>
-          </div>
         </div>
-      </SectionContainer>
-    );
-  } else {
-    return (
-      <SectionContainer>
-        <Card className="w-full p-10 h-[500px] backdrop-blur-2xl overflow-hidden relative">
-          <CardContent className="flex flex-row h-full ">
-            <div className="flex-1 flex flex-col justify-between items-start gap-4  z-10">
-              <div className="flex flex-row gap-2">
-                <a
-                  href="https://maps.app.goo.gl/DpASuLvw7wRc2Yw67"
-                  className="flex flex-row items-center gap-2 text-muted-foreground cursor-pointer"
-                >
-                  <MapPin className="size-4" />
-                  {t(`hero.address`)}
-                </a>
-                <Separator orientation="vertical" />
-                <WorkHourIndicator />
-              </div>
-
-              <div className="flex-1 flex flex-col justify-center items-start max-w-1/2 gap-2">
-                <p className="font-light text-5xl antialiased ">
-                  {t(`hero.title`)}
-                </p>
-
-                <p className="font-bold tracking-wide text-6xl text-blue-600 uppercase antialiased ">
-                  {t(`hero.titlebold`)}
-                </p>
-                <Separator />
-                <p className="font-light text-md text-muted-foreground">
-                  {t(`hero.description`)}
-                </p>
-              </div>
-
-              <div className="flex flex-row gap-4 p-2 backdrop-blur-2xl rounded-xl">
-                <div className="flex flex-col justify-center items-start text-lg font-thin ">
-                  <p>Mai mult de</p>
-                  <div className="flex flex-row gap-2">
-                    <p className="font-bold text-xl text-blue-600 text-center">
-                      10
-                    </p>{" "}
-                    <p>ani</p>
-                  </div>
-                  <p>experienta</p>
-                </div>
-                <Separator orientation="vertical" />
-                <div className="flex flex-col justify-center items-start text-lg font-thin text-muted-foreground">
-                  <p>Oferim peste</p>
-                  <p className="font-bold text-xl text-blue-600 text-center">
-                    30
+      </div>
+      <div className="relative  mx-5 sm:mx-0 rounded-lg overflow-hidden">
+        <span className="absolute -top-10 -left-10 size-40 rounded-full bg-blue-400/50 dark:bg-blue-800/50 blur"></span>
+        <span className="absolute -bottom-10 -right-10 size-40 rounded-full bg-blue-400/50 dark:bg-blue-800/50 blur"></span>
+        <div className="relative flex flex-row justify-between items-start sm:items-center gap-4 p-5  sm:h-40 bg-background/50 border border-boder/50  rounded-lg w-full  backdrop-blur-2xl ">
+          {displayedIndications.map((item, index) => (
+            <>
+              <div key={index} className="flex-1/4 flex flex-row">
+                <div className="flex flex-col">
+                  <h4 className="text-base sm:text-4xl font-medium tracking-tighter text-blue-600">
+                    {item.main}
+                  </h4>
+                  <p className="text-sm sm:text-base font-light">
+                    {item.secondary}
                   </p>
-                  <p>servicii</p>
-                </div>
-                <Separator orientation="vertical" />
-                <div className="flex flex-col justify-center items-start text-lg font-thin text-muted-foreground">
-                  <p>Mandri cu</p>
-                  <div className="flex flex-row gap-2">
-                    <p className="font-bold text-xl text-blue-600 text-center">
-                      5000
-                    </p>{" "}
-                    <p>+</p>
-                  </div>
-                  <p>clienti tratati</p>
-                </div>
-                <Separator orientation="vertical" />
-                <div className="flex flex-col justify-center items-start text-lg font-thin text-muted-foreground">
-                  <p>Garantam</p>
-                  <div className="flex flex-row gap-2">
-                    <p className="font-bold text-xl text-blue-600 text-center">
-                      100
-                    </p>{" "}
-                    <p>%</p>
-                  </div>
-                  <p>calitate.</p>
                 </div>
               </div>
-            </div>
-
-            <img
-              src={SmilingImg}
-              alt="smiling woman"
-              className="absolute object-cover h-[550px] z-0 -bottom-20 -right-20"
-            />
-          </CardContent>
-        </Card>
-      </SectionContainer>
-    );
-  }
+              {displayedIndications.length - 1 != index && (
+                <Separator orientation="vertical" />
+              )}
+            </>
+          ))}
+        </div>
+      </div>
+    </SectionContainer>
+  );
 };
 
 export default Hero;

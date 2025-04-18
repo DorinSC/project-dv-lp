@@ -22,61 +22,9 @@ import {
 import toothLogo from "@/assets/logo/toothlogo.svg";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
-import CallButton from "../settings/callButton";
+import CallButton from "@/components/settings/callButton";
 import { handleCall } from "@/lib/handleCall";
-
-const navItems = [
-  {
-    title: "promotions",
-    href: "/promotions",
-    layout: "featured", // specify custom layout
-    subitems: [
-      {
-        title: "promotion 1",
-        href: "/promotions/1",
-        description: "lorem ipsum",
-      },
-      {
-        title: "promotion 2",
-        href: "/promotions/2",
-        description: "lorem ipsum ipsum lorem",
-      },
-      {
-        title: "promotion 3",
-        href: "/promotions/3",
-        description: "lorem ipsum lorem ipsum",
-      },
-    ],
-  },
-  {
-    title: "services",
-    href: "/services",
-    layout: "columns-2", // another custom layout
-    subitems: [
-      { title: "service 1", href: "/services/1", description: "lorem ipsum" },
-      {
-        title: "service 2",
-        href: "/services/2",
-        description: "lorem ipsum ipsum lorem",
-      },
-      {
-        title: "service 3",
-        href: "/services/3",
-        description: "lorem ipsum lorem ipsum",
-      },
-      {
-        title: "service 4",
-        href: "/services/4",
-        description: "lorem ipsum lorem ipsum",
-      },
-    ],
-  },
-
-  {
-    title: "contactus",
-    href: "#contact-us",
-  },
-];
+import { navItems, NavItem, SubItem } from "@/data/navItems";
 
 const NavBar = () => {
   const isMobile = useIsMobile();
@@ -85,7 +33,7 @@ const NavBar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 px-40 flex flex-row py-2 border border-b-[1px] border-border/50 justify-between bg-background ",
+        "fixed top-0 left-0 right-0 z-50 h-[60px] px-40 flex flex-row py-2 border border-b-[1px] border-border/50 justify-between bg-background ",
         isMobile && "px-4"
       )}
     >
@@ -93,23 +41,22 @@ const NavBar = () => {
         <Link
           to="/"
           className={cn(
-            "flex flex-row justify-baseline items-center text-3xl  font-bold font-ranga outlined",
-            isMobile && "text-2xl"
+            "flex flex-row justify-baseline items-center text-4xl  font-bold font-ranga outlined",
+            isMobile && "text-3xl"
           )}
         >
           <span>Dental</span>
           <img
             src={toothLogo}
             alt="Tooth Logo"
-            className={cn("w-6 h-6 mx-1 inline-block", isMobile && "w-5 h-5")}
+            className={cn("w-8 h-8 mx-1 inline-block", isMobile && "w-6 h-6")}
           />
           <span>Vlad</span>
         </Link>
       </div>
 
       {isMobile ? (
-        <div className="flex flex-row gap-2">
-          <CallButton />
+        <div className="flex flex-row items-center gap-2">
           <ThemeToggle />
           <LanguageToggle />
           <Drawer>
@@ -121,7 +68,7 @@ const NavBar = () => {
             <DrawerContent>
               <DrawerBody>
                 <div className="flex flex-col gap-4">
-                  {navItems.map((item) => (
+                  {navItems.map((item: NavItem) => (
                     <Button
                       key={item.title}
                       variant="ghost"
@@ -151,7 +98,7 @@ const NavBar = () => {
         <>
           <NavigationMenu>
             <NavigationMenuList>
-              {navItems.map((item) => (
+              {navItems.map((item: NavItem) => (
                 <NavigationMenuItem key={item.title}>
                   {item.subitems ? (
                     <>
@@ -166,47 +113,48 @@ const NavBar = () => {
                             <div>
                               {/* First item prominently displayed */}
                               {item.subitems[0] && (
-                                <Link to={item.subitems[0].href}>
-                                  <NavigationMenuLink className="block p-4 h-full rounded-lg bg-muted hover:bg-muted/70">
-                                    <div className="font-semibold text-lg">
-                                      {t(`navitems.${item.subitems[0].title}`)}
+                                <Link to="#">
+                                  <NavigationMenuLink className=" block   p-4 h-full rounded-lg bg-muted hover:bg-muted/70">
+                                    <div className="text-lg font-medium text-blue-600">
+                                      {item.subitems[0].title}
                                     </div>
                                     <p className="text-sm text-muted-foreground">
-                                      {t(
-                                        `navitems.${item.subitems[0].description}`
-                                      )}
+                                      {item.subitems[0].description}
                                     </p>
                                   </NavigationMenuLink>
                                 </Link>
                               )}
                             </div>
+
                             <div className="flex flex-col gap-2">
-                              {item.subitems.slice(1).map((subitem) => (
-                                <Link to={subitem.href} key={subitem.title}>
-                                  <NavigationMenuLink className="block p-2 rounded-lg hover:bg-muted">
-                                    <div className="font-medium">
-                                      {t(`navitems.${subitem.title}`)}
-                                    </div>
-                                    <p className="text-sm text-muted-foreground">
-                                      {t(`navitems.${subitem.description}`)}
-                                    </p>
-                                  </NavigationMenuLink>
-                                </Link>
-                              ))}
+                              {item.subitems
+                                .slice(1)
+                                .map((subitem: SubItem) => (
+                                  <Link to="#" key={subitem.title}>
+                                    <NavigationMenuLink className="block p-2 rounded-lg hover:bg-muted">
+                                      <div className="text-normal font-medium  text-blue-600">
+                                        {subitem.title}
+                                      </div>
+                                      <p className="text-sm text-muted-foreground">
+                                        {subitem.description}
+                                      </p>
+                                    </NavigationMenuLink>
+                                  </Link>
+                                ))}
                             </div>
                           </div>
                         )}
 
                         {item.layout === "columns-2" && (
                           <div className="grid grid-cols-2 gap-4 p-4 w-[500px]">
-                            {item.subitems.map((subitem) => (
-                              <Link to={subitem.href} key={subitem.title}>
+                            {item.subitems.map((subitem: SubItem) => (
+                              <Link to="#" key={subitem.title}>
                                 <NavigationMenuLink className="block p-2 rounded-lg hover:bg-muted">
                                   <div className="font-medium">
-                                    {t(`navitems.${subitem.title}`)}
+                                    {subitem.title}
                                   </div>
                                   <p className="text-sm text-muted-foreground">
-                                    {t(`navitems.${subitem.description}`)}
+                                    {subitem.description}
                                   </p>
                                 </NavigationMenuLink>
                               </Link>
@@ -217,8 +165,8 @@ const NavBar = () => {
                         {/* Default layout if no special layout provided */}
                         {!item.layout && (
                           <div className="p-4 w-[200px]">
-                            {item.subitems.map((subitem) => (
-                              <Link to={subitem.href} key={subitem.title}>
+                            {item.subitems.map((subitem: SubItem) => (
+                              <Link to="#" key={subitem.title}>
                                 <NavigationMenuLink className="block p-2 rounded-lg hover:bg-muted">
                                   <div className="font-medium">
                                     {t(`navitems.${subitem.title}`)}
@@ -245,7 +193,7 @@ const NavBar = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-row items-center gap-4">
             <CallButton />
             <ThemeToggle />
             <LanguageToggle />

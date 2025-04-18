@@ -9,58 +9,7 @@ import FbIcon from "@/assets/icons/facebookIcon.png";
 import GIcon from "@/assets/icons/googleIcon.png";
 import InstaIcon from "@/assets/icons/instagramIcon.png";
 import { useTranslation } from "react-i18next";
-
-const testimonials = [
-  {
-    name: "Dorin",
-    surname: "Scoferta",
-    text: "Raport calitate-preț excelent. Profesionalism la cel mai înalt nivel.",
-    rating: 5,
-    source: "google",
-  },
-  {
-    name: "Николай",
-    surname: "Дьякону",
-    text: "Прекрасный персонaл. Всем советую.",
-    rating: 5,
-    source: "google",
-  },
-  {
-    name: "Jhon",
-    surname: "Dow",
-    text: "Totul a fost clar explicat, fără costuri ascunse și cu multă răbdare.",
-    rating: 5,
-    source: "instagram",
-  },
-  {
-    name: "Ion",
-    surname: "Falfache",
-    text: "Moderne Klinik, saubere Räume und kompetente Zahnärzte. Absolut empfehlenswert!",
-    rating: 5,
-    source: "google",
-  },
-  {
-    name: "Ioana",
-    surname: "Falfache",
-    text: "Service impeccable et personnel très professionnel. Je recommande vivement !",
-    rating: 5,
-    source: "google",
-  },
-  {
-    name: "Irina",
-    surname: "Scoferta",
-    text: "Лікарі уважні та компетентні. Все пояснюють зрозуміло.",
-    rating: 5,
-    source: "facebook",
-  },
-  {
-    name: "Mihaela",
-    surname: "Darie",
-    text: "Очень благодарна за качественное лечение и заботу!",
-    rating: 5,
-    source: "facebook",
-  },
-];
+import { testimonials, Testimonial } from "@/data/testimonials";
 
 const StarRating = ({ rating = 0 }: { rating?: number }) => {
   return (
@@ -93,19 +42,8 @@ const sourceIcons: Record<string, string> = {
   instagram: InstaIcon,
 };
 
-const TestimonialCard = ({
-  name,
-  surname,
-  text,
-  rating,
-  source,
-}: {
-  name: string;
-  surname: string;
-  text: string;
-  rating: number;
-  source?: string;
-}) => {
+const TestimonialCard = (data: Testimonial) => {
+  const { name, surname, text, rating, source } = data;
   return (
     <div
       className="bg-muted rounded-lg p-4 flex flex-col
@@ -146,7 +84,7 @@ const Testimonials = () => {
 
       <Card
         className={cn(
-          "relative inline-flex w-full h-[300px] bg-blue-500 border-none",
+          "relative inline-flex w-full h-[300px] bg-blue-500 border-none rounded-lg",
           isMobile && "rounded-none h-[400px]"
         )}
       >
@@ -161,7 +99,7 @@ const Testimonials = () => {
             cols={isMobile ? 2 : 3}
             className=""
           >
-            {testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial: Testimonial, index) => (
               <TestimonialCard
                 key={index}
                 name={testimonial.name}

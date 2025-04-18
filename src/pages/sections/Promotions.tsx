@@ -2,45 +2,10 @@ import SectionContainer from "@/components/sectionContainer";
 import SectionLabel from "@/components/sectionLabel";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
-import Promo1 from "@/assets/promotions/promo1.jpg";
-import Promo2 from "@/assets/promotions/promo2.jpg";
-import Promo3 from "@/assets/promotions/promo3.jpg";
-import Promo4 from "@/assets/promotions/promo4.jpg";
 import PlaceholderImage from "@/assets/placeholder.svg";
 import { useIsMobile } from "@/hooks/isMobile";
 import { Button } from "@/components/ui/button";
-
-const promotions = [
-  {
-    title: "Impreuna mai avantajos",
-    description: "1+1 = 1100 Lei, detartraj impreuna e mai avantajos",
-    img: Promo1,
-    startDate: "12-04-2025",
-    endDate: "25-04-2025",
-  },
-  {
-    title: "8 Martie - 10%",
-    description:
-      "Inscrie-te de 8 Martie si primesti -10% reducere la orice procedura",
-    img: Promo2,
-    startDate: "08-03-2025",
-    endDate: "08-03-2025",
-  },
-  {
-    title: "Inalbire mai ieftina",
-    description: "Description of promotion 3",
-    img: Promo3,
-    startDate: "12-04-2025",
-    endDate: "15-04-2025",
-  },
-  {
-    title: "Promotie de 14 Februarie",
-    description: "Description of promotion 4",
-    img: Promo4,
-    startDate: "12-04-2025",
-    endDate: "15-04-2025",
-  },
-];
+import { promotions, Promotion } from "@/data/promotions";
 
 const PromotionStatus = ({ status }: { status: "expired" | "active" }) => {
   return (
@@ -75,17 +40,7 @@ function isTodayBetween(startDate: string, endDate: string) {
   return today >= start && today <= end;
 }
 
-const PromotionCard = ({
-  data,
-}: {
-  data: {
-    title: string;
-    description: string;
-    img: string;
-    startDate: string;
-    endDate: string;
-  };
-}) => {
+const PromotionCard = ({ data }: { data: Promotion }) => {
   const { title, description, img, startDate, endDate } = data;
   const status = isTodayBetween(startDate, endDate) ? "active" : "expired";
   const isMobile = useIsMobile();
@@ -95,7 +50,7 @@ const PromotionCard = ({
       <div className="flex flex-col w-full p-4 gap-1 overflow-hidden">
         <p
           className={cn(
-            "font-thin text-muted-foreground",
+            "text-sm sm:text-base font-light text-muted-foreground",
             isMobile && "text-xs"
           )}
         >
@@ -103,7 +58,7 @@ const PromotionCard = ({
         </p>
         <h3
           className={cn(
-            "font-thin text-3xl tracking-tighter text-blue-600",
+            "text-base sm:text-xl font-medium tracking-tighter text-blue-600",
             isMobile && "text-2xl"
           )}
         >
@@ -111,7 +66,7 @@ const PromotionCard = ({
         </h3>
         <p
           className={cn(
-            "text-base text-muted-foreground text-ellipsis",
+            "text-muted-foreground font-normal text-sm sm:text-base",
             isMobile && "text-sm"
           )}
         >
@@ -133,8 +88,8 @@ const Promotions = () => {
     <SectionContainer>
       <SectionLabel>{t("promotions.title")}</SectionLabel>
       <div className={cn("grid grid-cols-2 gap-8", isMobile && "grid-cols-1")}>
-        {promotions.map((promo) => (
-          <PromotionCard data={promo} />
+        {promotions.map((promo: Promotion) => (
+          <PromotionCard key={promo.title} data={promo} />
         ))}
       </div>
       <div className="flex justify-center">

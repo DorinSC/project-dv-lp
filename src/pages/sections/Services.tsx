@@ -9,25 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
-
-const services = [
-  {
-    title: "Extractia dintelui temporar",
-    price: 700,
-    description: "lorem ipsum loraren bisque sarex romanum",
-  },
-  { title: "Sinus lifting inchis", price: 3000 },
-  { title: "Extractia dintelui permanent tipic", price: 800 },
-  { title: "Sinus lifting deschis", price: 10000 },
-  { title: "Extractia molarului 3", priceFrom: 700, priceTo: 3000 },
-  { title: "PRF / aditie osoasa 0,5g", price: 4000 },
-  { title: "Rezectie apicala cu chistectomie", price: 3500 },
-  { title: "Suturarea", price: 250 },
-  { title: "Frenoplastie", price: 2000 },
-  { title: "Tratamentul alveolitei", price: 1000 },
-  { title: "Augmentarea crestei alveolare", priceFrom: 4000, priceTo: 12000 },
-  { title: "Chiuretaj subgingival arcada", price: 2000 },
-];
+import { services, Service } from "@/data/serices";
 
 const Services = () => {
   const { t } = useTranslation();
@@ -36,24 +18,24 @@ const Services = () => {
       <SectionLabel>{t("services.title")}</SectionLabel>
 
       <div className="relative rounded-lg overflow-hidden">
-        <span className="absolute -top-10 -left-10 size-80 rounded-full bg-blue-400/50 dark:bg-blue-800/50"></span>
-        <span className="absolute -bottom-10 -right-10 size-80 rounded-full bg-blue-400/50 dark:bg-blue-800/50 "></span>
+        <span className="absolute -top-10 -left-10 size-80 rounded-full bg-blue-400/50 dark:bg-blue-800/50 blur"></span>
+        <span className="absolute -bottom-10 -right-10 size-80 rounded-full bg-blue-400/50 dark:bg-blue-800/50 blur"></span>
         <div className="relative p-4 sm:p-10 border border-border/50 rounded-lg bg-background/50 backdrop-blur-2xl overflow-hidden">
           <p className="text-center pb-2 text-muted-foreground  text-sm">
             {t("services.currencyDisclaimer")}
           </p>
           <Accordion type="single" collapsible>
-            {services.map((service) => (
+            {services.map((service: Service) => (
               <AccordionItem key={service.title} value={service.title}>
                 <AccordionTrigger
                   className={cn(
-                    "flex items-center px-3 py-2 sm:px-5 sm:py-3 hover:bg-muted/50 rounded-none"
+                    "flex items-center px-3 py-2 sm:px-5 sm:py-3 hover:cursor-pointer rounded-none"
                   )}
                 >
                   <div className="flex justify-between items-center w-full gap-2">
                     <div
                       className={cn(
-                        "text-base sm:text-xl font-medium sm:font-thin w-full sm:w-1/2"
+                        "text-base sm:text-xl font-medium w-full sm:w-1/2"
                       )}
                     >
                       {service.title}
@@ -70,7 +52,7 @@ const Services = () => {
                     </div>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground font-normal px-4 py-2 sm:px-10 sm:py-5 text-sm sm:text-base">
+                <AccordionContent className="px-4 py-2 sm:px-10 sm:py-5 text-muted-foreground font-normal text-sm sm:text-base">
                   {service.description}
                 </AccordionContent>
               </AccordionItem>

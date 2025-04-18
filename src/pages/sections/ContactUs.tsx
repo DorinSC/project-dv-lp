@@ -15,10 +15,10 @@ const ContactUs = () => {
       <SectionLabel>{t("contactus.title")}</SectionLabel>
 
       <div className="relative rounded-lg  border border-border/50 bg-background/50 overflow-hidden">
-        <span className="absolute -bottom-10 -left-10 size-80 rounded-full bg-blue-400/50  dark:bg-blue-800/50"></span>
+        <span className="absolute -bottom-10 -left-10 size-80 rounded-full bg-blue-400/50  dark:bg-blue-800/50 blur"></span>
         <div
           className={cn(
-            "relative flex gap-8 p-6 backdrop-blur-2xl",
+            "relative flex gap-8 p-6 backdrop-blur-2xl ",
             isMobile ? "flex-col " : "flex-row "
           )}
         >
@@ -32,42 +32,48 @@ const ContactUs = () => {
               <p className="mb-2 text-blue-600">
                 {t(`contactus.location.title`)}
               </p>
-              <p className="flex items-center gap-2 font-medium ">
+              <div className="flex items-center gap-2 text-base font-normal sm:text-xl ">
                 <MapPin className="size-4" />
-                {t(`contactus.location.address`)}
-              </p>
+                <p>{t(`contactus.location.address`)}</p>
+              </div>
             </div>
+
             <Separator />
+
             <div className="flex-1 my-auto">
               <p className="mb-2 text-blue-600">
                 {t(`contactus.workhours.title`)}
               </p>
-              <p className="flex items-center gap-2 font-medium ">
-                <CalendarCheck className="size-4 text-green-600" />
-                {t(`weekDays.monday`)} - {t(`weekDays.friday`)} : 08:00 - 18:00
-              </p>
-              <p className="flex items-center gap-2 font-medium ">
-                <CalendarX className="size-4 text-red-600" />
-                {t(`weekDays.saturday`)} - {t(`weekDays.sunday`)} :{" "}
-                {t(`officeStatus.closed`)}
-              </p>
+              <div className="flex items-center gap-2 text-base font-normal sm:text-xl ">
+                <CalendarCheck className="size-4 text-green-500" />
+                <p>
+                  {t(`weekDays.monday`)} - {t(`weekDays.friday`)} : 08:00 -
+                  18:00
+                </p>
+              </div>
+              <div className="flex items-center gap-2 text-base font-normal sm:text-xl ">
+                <CalendarX className="size-4 text-red-500" />
+                <p>
+                  {t(`weekDays.saturday`)} - {t(`weekDays.sunday`)} :{" "}
+                  {t(`officeStatus.closed`)}
+                </p>
+              </div>
             </div>
+
             <Separator />
+
             <div className="flex-1 my-auto">
               <p className="mb-2 text-blue-600">
                 {t(`contactus.contacts.title`)}
               </p>
-              <p className="flex items-center gap-2 font-medium ">
-                <Phone className="size-4" /> +357 071234567
-              </p>
+              <div className="flex items-center gap-2 text-base font-normal sm:text-xl">
+                <Phone className="size-4" />
+                <p> +373 0797 33 221</p>
+              </div>
 
-              <p className="flex items-center gap-2 font-medium ">
-                <Phone className="size-4" /> +357 071234567
-              </p>
-
-              <p className="flex items-center gap-2 font-medium ">
-                <Mail className="size-4" /> dentalVlad@office.com
-              </p>
+              <div className="flex items-center gap-2 text-base font-normal sm:text-xl">
+                <Mail className="size-4" /> <p>srl.dentalvlad@gmail.com</p>
+              </div>
             </div>
           </div>
           <div className="flex-1/2 rounded-lg overflow-hidden">
